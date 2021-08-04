@@ -14,24 +14,24 @@ public class C206_CaseStudy {
 		while(option != 6) {
 			C206_CaseStudy.appChoice();
 			int userChoice = Helper.readInt("Enter an option> ");
-			
+			// Shirin
 			if(userChoice == 1) {
 				
 			}
-			
+			//Glenys
 			else if (userChoice == 2) {
 				
 			}
-			
+			//Jannice
 			else if (userChoice == 3) {
 				C206_CaseStudy.menuChoice();
 				
 			}
-			
+			//Kai Le
 			else if(userChoice == 4) {
 				
 			}
-			
+			//Jun Peng
 			else if(userChoice == 5) {
 				
 			}
