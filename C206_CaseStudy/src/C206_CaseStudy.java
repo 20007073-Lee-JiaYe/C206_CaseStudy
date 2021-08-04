@@ -1,9 +1,97 @@
+import java.util.ArrayList;
 
 public class C206_CaseStudy {
 
+
+	private static ArrayList<Menu> menuList = new ArrayList<Menu>();
+	private static ArrayList<Menu> menu = new ArrayList<Menu>();
+	Menu w1 = new Menu("Western" , "Burger" , "Apple Juice" , "Orange");
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		
+		int option = -1;
+		
+		while(option != 6) {
+			C206_CaseStudy.appChoice();
+			int userChoice = Helper.readInt("Enter an option> ");
+			
+			if(userChoice == 1) {
+				
+			}
+			
+			else if (userChoice == 2) {
+				
+			}
+			
+			else if (userChoice == 3) {
+				C206_CaseStudy.menuChoice();
+				
+			}
+			
+			else if(userChoice == 4) {
+				
+			}
+			
+			else if(userChoice == 5) {
+				
+			}
+			
+			else{
+				System.out.println("Thank you for using the app!");
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	private static void appChoice() {
+		Helper.line(80, "-");
+		System.out.println("App Choice");
+		Helper.line(80, "-");
+		System.out.println("1. User Account");
+		System.out.println("2. Menu Bank");
+		System.out.println("3. Monthly Menu");
+		System.out.println("4. Lunch Box Order");
+		System.out.println("5. Order Bill");
+		System.out.println("6. Quit\n");
+	}
+	private static void menuChoice() {
+		// TODO Auto-generated method stub
+		Helper.line(80, "-");
+		System.out.println("Menu");
+		Helper.line(80, "-");
+		System.out.println("1. Add Monthly Menu");
+		System.out.println("2. View Monthly Menu");
+		System.out.println("3. Edit Monthly Menu");
+		System.out.println("4. Delete Monthly Menu");
+		System.out.println("5. Quit");
+		
+		int choice = Helper.readInt("Enter a choice> ");
+		if(choice == 1) {
+			
+		} else if(choice == 2) {
+			for (Menu m : menuList) {
+				m.display();
+			}
+		}else if (choice == 3) {
+			
+		}else if (choice ==4){
+			
+		} else {
+			System.out.println("You have quit the menu option ");
+		}
+	}
+	
+	// JANNICE DOING MENU METHOD
+	public static void addMenu() {
+		
 	}
 
 }
