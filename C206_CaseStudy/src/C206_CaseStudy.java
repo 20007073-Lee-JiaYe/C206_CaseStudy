@@ -4,8 +4,8 @@ public class C206_CaseStudy {
 
 
 	private static ArrayList<Menu> menuList = new ArrayList<Menu>();
-	private static ArrayList<Menu> menu = new ArrayList<Menu>();
 	Menu w1 = new Menu("Western" , "Burger" , "Apple Juice" , "Orange");
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -85,15 +85,27 @@ public class C206_CaseStudy {
 		}else if (choice == 3) {
 			
 		}else if (choice ==4){
-			
+			String menuName = Helper.readString("Enter the menu name to delete> ");
+			C206_CaseStudy.doDeleteMenu(menuName);
 		} else {
 			System.out.println("You have quit the menu option ");
 		}
 	}
 	
-	// JANNICE DOING MENU METHOD
 	public static void addMenu() {
 		
 	}
+	public static void doDeleteMenu(String menuName) {
+		for(Menu m : menuList) {
+			if(m.getName().equalsIgnoreCase(menuName)) {
+				m.setDrinks(null);
+				m.setFruits(null);
+				m.setName(null);
+			}
+		}
+	}
+	
+	
+	
 //==============================================END OF OPTION 3=================================================
 }

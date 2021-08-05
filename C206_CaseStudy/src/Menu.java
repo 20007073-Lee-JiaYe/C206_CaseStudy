@@ -33,6 +33,27 @@ public class Menu {
 		return fruits;
 	}
 	
+	
+	public void setMenuType(String menuType) {
+		this.menuType = menuType;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public void setDrinks(String drinks) {
+		this.drinks = drinks;
+	}
+
+
+	public void setFruits(String fruits) {
+		this.fruits = fruits;
+	}
+
+
 	public void display() {
 		System.out.println("Menu type: "+  menuType );
 		System.out.println("Menu Name: "+  name );
