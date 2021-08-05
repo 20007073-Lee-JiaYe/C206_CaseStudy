@@ -8,7 +8,7 @@
  */
 public class Account {
 	private String username;
-	private String password;
+	public String password;
 	private String role;
 	
 	public Account(String username, String password, String role) {
@@ -21,11 +21,11 @@ public class Account {
 		return username;
 	}
 	
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
 	public String getRole() {
 		return role;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }
