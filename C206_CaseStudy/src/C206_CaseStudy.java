@@ -20,6 +20,7 @@ public class C206_CaseStudy {
 			
 			//Shirin
 			if(userChoice == 1) {
+				C206_CaseStudy.loginAccount();
 				C206_CaseStudy.addAccount();
 			}
 			else if (userChoice == 2) {
@@ -63,13 +64,12 @@ public class C206_CaseStudy {
 		Helper.line(80, "-");
 		System.out.println("App Choice");
 		Helper.line(80, "-");
-		System.out.println("1. Login to User Account");
-		System.out.println("2. Add User Account");
-		System.out.println("3. Menu Bank");
-		System.out.println("4. Monthly Menu");
-		System.out.println("5. Lunch Box Order");
-		System.out.println("6. Order Bill");
-		System.out.println("7. Quit\n");
+		System.out.println("1. User Account");
+		System.out.println("2. Menu Bank");
+		System.out.println("3. Monthly Menu");
+		System.out.println("4. Lunch Box Order");
+		System.out.println("5. Order Bill");
+		System.out.println("6. Quit\n");
 	}
 	
 	public static void loginAccount() {
