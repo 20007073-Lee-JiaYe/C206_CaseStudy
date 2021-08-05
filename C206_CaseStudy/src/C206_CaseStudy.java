@@ -17,25 +17,29 @@ public class C206_CaseStudy {
 		while(option != 6) {
 			C206_CaseStudy.appChoice();
 			int userChoice = Helper.readInt("Enter an option> ");
-			// Shirin
+			
+			//Shirin
 			if(userChoice == 1) {
 				C206_CaseStudy.addAccount();
 			}
-			//Glenys
 			else if (userChoice == 2) {
 				
 			}
-			//Jannice
+			//Glenys
 			else if (userChoice == 3) {
+				
+			}
+			//Jannice
+			else if (userChoice == 4) {
 				C206_CaseStudy.menuChoice();
 				
 			}
 			//Kai Le
-			else if(userChoice == 4) {
+			else if(userChoice == 5) {
 				
 			}
 			//Jun Peng
-			else if(userChoice == 5) {
+			else if(userChoice == 6) {
 				
 			}
 			
@@ -59,12 +63,17 @@ public class C206_CaseStudy {
 		Helper.line(80, "-");
 		System.out.println("App Choice");
 		Helper.line(80, "-");
-		System.out.println("1. User Account");
-		System.out.println("2. Menu Bank");
-		System.out.println("3. Monthly Menu");
-		System.out.println("4. Lunch Box Order");
-		System.out.println("5. Order Bill");
-		System.out.println("6. Quit\n");
+		System.out.println("1. Login to User Account");
+		System.out.println("2. Add User Account");
+		System.out.println("3. Menu Bank");
+		System.out.println("4. Monthly Menu");
+		System.out.println("5. Lunch Box Order");
+		System.out.println("6. Order Bill");
+		System.out.println("7. Quit\n");
+	}
+	
+	public static void loginAccount() {
+		
 	}
 	
 	// Shirin
@@ -73,7 +82,7 @@ public class C206_CaseStudy {
 		String password = Helper.readString("Enter a password > ");
 		String role = Helper.readString("Enter a role (Parent/Student) > ");
 		addAccount.add(new Account(username, password, role));
-		System.out.println("New Account has been added!");
+		System.out.println("Account has been successfully created!");
 	}
 	
 	
