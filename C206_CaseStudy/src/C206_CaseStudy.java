@@ -23,24 +23,22 @@ public class C206_CaseStudy {
 				C206_CaseStudy.loginAccount();
 				C206_CaseStudy.addAccount();
 			}
+
+			//Glenys
 			else if (userChoice == 2) {
 				
 			}
-			//Glenys
-			else if (userChoice == 3) {
-				
-			}
 			//Jannice
-			else if (userChoice == 4) {
+			else if (userChoice == 3) {
 				C206_CaseStudy.menuChoice();
 				
 			}
 			//Kai Le
-			else if(userChoice == 5) {
+			else if(userChoice == 4) {
 				
 			}
 			//Jun Peng
-			else if(userChoice == 6) {
+			else if(userChoice == 5) {
 				
 			}
 			
