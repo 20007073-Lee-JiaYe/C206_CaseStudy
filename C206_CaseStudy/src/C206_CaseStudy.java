@@ -70,8 +70,9 @@ public class C206_CaseStudy {
 	public static void addAccount() {
 		String username = Helper.readString("Enter a username > ");
 		String password = Helper.readString("Enter a password > ");
-		String role = Helper.readString("Enter a role (parent/student) > ");
+		String role = Helper.readString("Enter a role (Parent/Student) > ");
 		addAccount.add(new Account(username, password, role));
+		System.out.println("New Account has been added!");
 	}
 	
 	
