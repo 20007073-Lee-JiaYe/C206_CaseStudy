@@ -19,10 +19,7 @@ public class C206_CaseStudy {
 			int userChoice = Helper.readInt("Enter an option> ");
 			// Shirin
 			if(userChoice == 1) {
-				String username = Helper.readString("Enter a username > ");
-				String password = Helper.readString("Enter a password > ");
-				String role = Helper.readString("Enter a role (parent/student) > ");
-				addAccount.add(new Account(username, password, role));
+				C206_CaseStudy.addAccount();
 			}
 			//Glenys
 			else if (userChoice == 2) {
@@ -68,6 +65,13 @@ public class C206_CaseStudy {
 		System.out.println("4. Lunch Box Order");
 		System.out.println("5. Order Bill");
 		System.out.println("6. Quit\n");
+	}
+	
+	public static void addAccount() {
+		String username = Helper.readString("Enter a username > ");
+		String password = Helper.readString("Enter a password > ");
+		String role = Helper.readString("Enter a role (parent/student) > ");
+		addAccount.add(new Account(username, password, role));
 	}
 	
 	
