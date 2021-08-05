@@ -7,7 +7,7 @@ public class C206_CaseStudy {
 	private static ArrayList<Menu> menu = new ArrayList<Menu>();
 	Menu w1 = new Menu("Western" , "Burger" , "Apple Juice" , "Orange");
 	
-	ArrayList<Account> addAccount = new ArrayList<>();
+	private static ArrayList<Account> addAccount = new ArrayList<>();
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -19,7 +19,10 @@ public class C206_CaseStudy {
 			int userChoice = Helper.readInt("Enter an option> ");
 			// Shirin
 			if(userChoice == 1) {
-				
+				String username = Helper.readString("Enter a username > ");
+				String password = Helper.readString("Enter a password > ");
+				String role = Helper.readString("Enter a role (parent/student) > ");
+				addAccount.add(new Account(username, password, role));
 			}
 			//Glenys
 			else if (userChoice == 2) {
@@ -65,14 +68,6 @@ public class C206_CaseStudy {
 		System.out.println("4. Lunch Box Order");
 		System.out.println("5. Order Bill");
 		System.out.println("6. Quit\n");
-	}
-	
-	
-	// ========================================== ADD NEW USER ACC ======================================================
-	public static void addAccount() {
-		
-		
-		
 	}
 	
 	
