@@ -51,6 +51,7 @@ public class C206_CaseStudy {
 		
 		
 	}
+	// ========================================== MENU ===================================================================
 	private static void appChoice() {
 		Helper.line(80, "-");
 		System.out.println("App Choice");
@@ -62,6 +63,7 @@ public class C206_CaseStudy {
 		System.out.println("5. Order Bill");
 		System.out.println("6. Quit\n");
 	}
+// =============================================OPTION 3========================================================================
 	private static void menuChoice() {
 		// TODO Auto-generated method stub
 		Helper.line(80, "-");
@@ -93,5 +95,5 @@ public class C206_CaseStudy {
 	public static void addMenu() {
 		
 	}
-
+//==============================================END OF OPTION 3=================================================
 }
