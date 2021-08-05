@@ -67,6 +67,7 @@ public class C206_CaseStudy {
 		System.out.println("6. Quit\n");
 	}
 	
+	// Shirin
 	public static void addAccount() {
 		String username = Helper.readString("Enter a username > ");
 		String password = Helper.readString("Enter a password > ");
