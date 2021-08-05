@@ -6,6 +6,9 @@ public class C206_CaseStudy {
 	private static ArrayList<Menu> menuList = new ArrayList<Menu>();
 	private static ArrayList<Menu> menu = new ArrayList<Menu>();
 	Menu w1 = new Menu("Western" , "Burger" , "Apple Juice" , "Orange");
+	
+	ArrayList<Account> addAccount = new ArrayList<>();
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -63,6 +66,16 @@ public class C206_CaseStudy {
 		System.out.println("5. Order Bill");
 		System.out.println("6. Quit\n");
 	}
+	
+	
+	// ========================================== ADD NEW USER ACC ======================================================
+	public static void addAccount() {
+		
+		
+		
+	}
+	
+	
 // =============================================OPTION 3========================================================================
 	private static void menuChoice() {
 		// TODO Auto-generated method stub
