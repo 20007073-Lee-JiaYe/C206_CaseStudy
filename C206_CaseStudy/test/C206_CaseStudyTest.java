@@ -27,29 +27,29 @@ public class C206_CaseStudyTest {
 	
 	
 //	==================== OPTION 3 MONTHLY MENU TEST CASE============================================
-@Test
-	public void doViewMenuTest() {
-	//Test that the list is not null
-	assertNotNull("Check if there is valid Menu arraylist to add to", menuList);
-	
-	//Test that menu items are added to the menu list
-	C206_CaseStudy.addCamcorder(menuList, mL1);
-	assertEquals("Check that Menu arraylist size is 1", 1, menuList.size());
-	
-	//Test that t
-	assertSame("Check that XXX is added", cc1, menuList.get(0));
-	
-	
-	
-	}
-@Test 
-	public void doAddMenuTest() {
-	
-}
-@Test 
-	public void doDeleteMenuTest() {
-	
-}
+//@Test
+//	public void doViewMenuTest() {
+//	//Test that the list is not null
+//	assertNotNull("Check if there is valid Menu arraylist to add to", menuList);
+//	
+//	//Test that menu items are added to the menu list
+//	C206_CaseStudy.addCamcorder(menuList, mL1);
+//	assertEquals("Check that Menu arraylist size is 1", 1, menuList.size());
+//	
+//	//Test that t
+//	assertSame("Check that XXX is added", cc1, menuList.get(0));
+//	
+//	
+//	
+//	}
+//@Test 
+//	public void doAddMenuTest() {
+//	
+//}
+//@Test 
+//	public void doDeleteMenuTest() {
+//	
+//}
 // ============================END OF OPTION 3 TEST CASE============================================
 
 }

@@ -141,7 +141,11 @@ public class C206_CaseStudy {
 	}
 
 	public static void doDeleteMenu(String menuName) {
-		
+		for(Menu m : menuList) {
+			if(m.getName().equalsIgnoreCase(menuName)) {
+				
+			}
+		}
 	}
 
 //==============================================END OF OPTION 3=================================================
