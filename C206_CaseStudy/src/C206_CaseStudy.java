@@ -22,8 +22,15 @@ public class C206_CaseStudy {
 
 			//Shirin
 			if(userChoice == 1) {
-				Account ac = addAccount();
-				C206_CaseStudy.addAccount(accountList, ac);
+				String userOpt = Helper.readString("Do you have an existing account? (Y/N) > ");
+				if (userOpt == "Y") {
+					C206_CaseStudy.loginAccount();
+				} else if (userOpt == "N"){
+					Account ac = addAccount();
+					C206_CaseStudy.addAccount(accountList, ac);
+				} else {
+					System.out.println("Please enter valid input");
+				}
 			}
 			//Glendys
 			else if (userChoice == 2) {
