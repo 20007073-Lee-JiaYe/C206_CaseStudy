@@ -8,10 +8,11 @@ public class C206_CaseStudy {
 	private static ArrayList<Fruits> fruitsList = new ArrayList<Fruits>();
 	private static ArrayList<Food> foodName = new ArrayList<Food>();
 
-	private static ArrayList<Account> addAccount = new ArrayList<>();
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		ArrayList<Account> accountList = new ArrayList<>();
+		accountList.add(new Account("nshirinbz", "nsbz0105", "Student"));
 
 		int option = -1;
 
@@ -21,8 +22,8 @@ public class C206_CaseStudy {
 
 			//Shirin
 			if(userChoice == 1) {
-				C206_CaseStudy.loginAccount();
-				C206_CaseStudy.addAccount();
+				Account ac = addAccount();
+				C206_CaseStudy.addAccount(accountList, ac);
 			}
 			//Glendys
 			else if (userChoice == 2) {
@@ -69,16 +70,24 @@ public class C206_CaseStudy {
 	}
 
 	public static void loginAccount() {
-
+		String loginUser = Helper.readString("Enter User Login > ");
+		String loginPw = Helper.readString("Enter User Password > ");
+		
 	}
 
 	// Shirin
-	public static void addAccount() {
+	public static Account addAccount() {
 		String username = Helper.readString("Enter a username > ");
 		String password = Helper.readString("Enter a password > ");
 		String role = Helper.readString("Enter a role (Parent/Student) > ");
-		addAccount.add(new Account(username, password, role));
-		System.out.println("Account has been successfully created!");
+		 Account ac = new Account(username, password, role);
+		 return ac;
+	}
+	
+	// Shirin
+	public static void addAccount(ArrayList<Account> accountList, Account ac) {
+		accountList.add(ac);
+		System.out.println("New User Account has been added!");
 	}
 
 // =============================================OPTION 3========================================================================
