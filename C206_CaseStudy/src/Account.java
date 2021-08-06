@@ -13,7 +13,7 @@ public class Account {
 	
 	public Account(String username, String password, String role) {
 		this.username = username;
-		this.password = password;
+		this.password = "";
 		this.role = role;
 	}
 	

@@ -19,35 +19,39 @@ public class C206_CaseStudy {
 			C206_CaseStudy.appChoice();
 			int userChoice = Helper.readInt("Enter an option> ");
 
-			// Shirin
-			if (userChoice == 1) {
+			//Shirin
+			if(userChoice == 1) {
+				C206_CaseStudy.loginAccount();
 				C206_CaseStudy.addAccount();
-			} else if (userChoice == 2) {
+			}
+			//Glendys
+			else if (userChoice == 2) {
 
 			}
-			// Glenys
+			//Jannice
 			else if (userChoice == 3) {
 
-			}
-			// Jannice
-			else if (userChoice == 4) {
 				C206_CaseStudy.menuChoice();
 
 			}
-			// Kai Le
-			else if (userChoice == 5) {
+			//Kai Le
+			else if(userChoice == 4) {
+				
 
 			}
-			// Jun Peng
-			else if (userChoice == 6) {
+			//Jun Peng
+			else if(userChoice == 5) {
+				
 
 			}
 
 			else {
 				System.out.println("Thank you for using the app!");
 			}
+			
+		} // end of while 
 
-		}
+		
 
 	}
 
@@ -56,13 +60,12 @@ public class C206_CaseStudy {
 		Helper.line(80, "-");
 		System.out.println("App Choice");
 		Helper.line(80, "-");
-		System.out.println("1. Login to User Account");
-		System.out.println("2. Add User Account");
-		System.out.println("3. Menu Bank");
-		System.out.println("4. Monthly Menu");
-		System.out.println("5. Lunch Box Order");
-		System.out.println("6. Order Bill");
-		System.out.println("7. Quit\n");
+		System.out.println("1. User Account");
+		System.out.println("2. Menu Bank");
+		System.out.println("3. Monthly Menu");
+		System.out.println("4. Lunch Box Order");
+		System.out.println("5. Order Bill");
+		System.out.println("6. Quit\n");
 	}
 
 	public static void loginAccount() {
@@ -111,13 +114,13 @@ public class C206_CaseStudy {
 		String type = "";
 		String name = "";
 		for(Food fd : foodName) {
-			type = fd.getType();
-			name = fd.getName();
+			type += fd.getType();
+			name += fd.getName();
 		}
 		
 		String drinks = "";
 		for(Drinks d : drinksList) {
-			drinks = d.getDrinks();
+			drinks += d.getDrinks();
 		}
 		
 		String fruits = "";
@@ -143,5 +146,5 @@ public class C206_CaseStudy {
 
 //==============================================END OF OPTION 3=================================================
 
-//
+
 }
