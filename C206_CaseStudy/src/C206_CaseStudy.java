@@ -68,6 +68,8 @@ public class C206_CaseStudy {
 		System.out.println("5. Order Bill");
 		System.out.println("6. Quit\n");
 	}
+	
+// ================================================== OPTION 1 ===============================================================
 
 	public static void loginAccount() {
 		String loginUser = Helper.readString("Enter User Login > ");
@@ -89,6 +91,12 @@ public class C206_CaseStudy {
 		accountList.add(ac);
 		System.out.println("New User Account has been added!");
 	}
+	
+// ============================================= END OF OPTION 1 ===============================================================
+	
+	
+	
+	
 
 // =============================================OPTION 3========================================================================
 	private static void menuChoice() {
