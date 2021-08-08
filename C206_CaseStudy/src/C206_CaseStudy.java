@@ -34,6 +34,7 @@ public class C206_CaseStudy {
 			}
 			//Glenys
 			else if (userChoice == 2) {
+				C206_CaseStudy.addMenu();
 				C206_CaseStudy.doViewMenu();
 
 			}
@@ -106,7 +107,10 @@ public class C206_CaseStudy {
 	//glenys
 	public static void addMenu() {
 		ArrayList<Menu> menuList = new ArrayList<Menu>();
-		menuList.add(new Menu(foodlist.get(0).getType,foodList.get(i).getName,drinkList.get(0).getName,fruitList.get(0).getName))
+		menuList.add(new Menu(foodlist.get(0).getType,foodList.get(0).getName,drinkList.get(0).getDrink,fruitList.get(0).getFruit));
+		menuList.add(new Menu(foodlist.get(1).getType,foodList.get(1).getName,drinkList.get(1).getDrink,fruitList.get(1).getFruit));
+		menuList.add(new Menu(foodlist.get(2).getType,foodList.get(2).getName,drinkList.get(2).getDrink,fruitList.get(2).getFruit))
+			
 	}
 	public void doMenuBank(){
 		
@@ -115,17 +119,17 @@ public class C206_CaseStudy {
 		foodList.add(new Food("Chicken Chop","Western"));
 		foodList.add(new Food("Plant based Chicken curry","Vegetarian"));
 		for(Int i = 0; i< foodList.size();i++){
-			output += String.format("%-10s %-10s",foodList.get(i).getDrink,foodList.get(i).getType);
+			output += String.format("%-10s %-10s\n",foodList.get(i).getDrink,foodList.get(i).getType);
 			
 		
 		}
 		for(Int i = 0; i< drinkList.size();i++){
-			output += String.format("%-10s",drinkList.get(i).getDrink);
+			output += String.format("%-10s\n",drinkList.get(i).getDrink);
 			
 		
 		}
 		for(Int i = 0; i< fruitList.size();i++){
-			output += String.format("%-10s %-10s",fruitList.get(i).getname,fruitList.get(i).getType);
+			output += String.format("%-10s\n",fruitList.get(i).getFruit);
 			
 		
 		}
