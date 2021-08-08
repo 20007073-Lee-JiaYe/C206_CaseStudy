@@ -32,7 +32,7 @@ public class C206_CaseStudy {
 					System.out.println("Please enter valid input");
 				}
 			}
-			//Glendys
+			//Glenys
 			else if (userChoice == 2) {
 				C206_CaseStudy.doViewMenu();
 
@@ -102,8 +102,24 @@ public class C206_CaseStudy {
 	
 // ============================================= END OF OPTION 1 ===============================================================
 	
-	
-	
+// ===========================================  OPTION 2 ======================================================================
+	//glenys
+	public static void addMenu() {
+		
+	}
+	public void doMenuBank(){
+		
+		String output = String.format("%-10s %-10s", "NAME","TYPE");
+		foodList.add(new Food(name,type));
+		for(Food i: foodList){
+			output += String.format("%-10s %-10s",i.getname,i.getType);
+			
+		
+		}
+		System.out.println(output);
+	}
+//==============================================END OF OPTION 2=================================================
+}
 	
 
 // =============================================OPTION 3========================================================================
