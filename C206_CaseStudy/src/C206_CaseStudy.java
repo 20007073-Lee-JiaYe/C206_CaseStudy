@@ -3,9 +3,7 @@ import java.util.ArrayList;
 public class C206_CaseStudy {
 
 	private static ArrayList<Menu> menuList = new ArrayList<Menu>();
-	
-	private static ArrayList<Drinks> drinksList = new ArrayList<Drinks>();
-	private static ArrayList<Fruits> fruitsList = new ArrayList<Fruits>();
+	private static ArrayList<Menu> list = new ArrayList<Menu>();
 	private static ArrayList<Food> foodName = new ArrayList<Food>();
 
 	private static ArrayList<Account> addAccount = new ArrayList<>();
@@ -81,74 +79,97 @@ public class C206_CaseStudy {
 		System.out.println("Account has been successfully created!");
 	}
 
-// =============================================OPTION 3========================================================================
-	private static void menuChoice() {
-		// TODO Auto-generated method stub
-		Helper.line(80, "-");
-		System.out.println("Menu");
-		Helper.line(80, "-");
-		System.out.println("1. Add Monthly Menu");
-		System.out.println("2. View Monthly Menu");
-		System.out.println("3. Edit Monthly Menu");
-		System.out.println("4. Delete Monthly Menu");
-		System.out.println("5. Quit");
+	// =============================================OPTION 3========================================================================
+		private static void menuChoice() {
+			// TODO Auto-generated method stub
+			Helper.line(80, "-");
+			System.out.println("Menu");
+			Helper.line(80, "-");
+			System.out.println("1. Add Monthly Menu");
+			System.out.println("2. View Monthly Menu");
+			System.out.println("3. Edit Monthly Menu");
+			System.out.println("4. Delete Monthly Menu");
+			System.out.println("5. Quit");
 
-		int choice = Helper.readInt("Enter a choice> ");
+			int choice = Helper.readInt("Enter a choice> ");
 
-		if (choice == 1) {
-			
-		} else if (choice == 2) {
-	
-		
-		} else if (choice == 3) {
-			C206_CaseStudy.doViewMenu();
-		} else if (choice == 4) {
-			String menuName = Helper.readString("Enter the menu name to delete> ");
-			C206_CaseStudy.doDeleteMenu(menuName);
-		} else {
-			System.out.println("You have quit the menu option ");
-		}
-	}
-
-	public static void addMenu() {
-		String type = "";
-		String name = "";
-		for(Food fd : foodName) {
-			type += fd.getType();
-			name += fd.getName();
-		}
-		
-		String drinks = "";
-		for(Drinks d : drinksList) {
-			drinks += d.getDrinks();
-		}
-		
-		String fruits = "";
-		for(Fruits f : fruitsList) {
-			fruits += f;
-		}
-		
-		menuList.add(new Menu(type , name , drinks , fruits));
-		
-	}
-
-	private static void doViewMenu() {
-		
-		for(Menu m : menuList) {
-			m.display();
-		}
-
-	}
-
-	public static void doDeleteMenu(String menuName) {
-		for(Menu m : menuList) {
-			if(m.getName().equalsIgnoreCase(menuName)) {
-				
+			if (choice == 1) {
+				ArrayList<Menu> m = inputMenu();
+				C206_CaseStudy.doAddMenu(menuList , m) ;
+			} else if (choice == 2) {
+				C206_CaseStudy.doViewMenu(menuList);
+			} else if (choice == 3) {
+				C206_CaseStudy.doUpdateMenu(menuList);
+			} else if (choice == 4) {
+//				int id = Helper.readInt("Enter menu id> ");
+				C206_CaseStudy.deleteMenu(menuList);
+			} else {
+				System.out.println("You have quit the menu option ");
 			}
 		}
-	}
+		public static ArrayList<Menu> inputMenu() {
+		Menu m1 = new Menu(1 , "1-Aug-2021" , "Hamburger" , "Nasi Lemak" , "Fried Rice" , "Apple Juice" , "Orange Juice" , "Watermelon" , "Papaya" );
+		Menu m2 = new Menu(2 , "2-Aug-2021" , "Spaghetti" , "Chicken Rice" , "Bee Hoon" , "Coconut Juice" , "Milo" , "Apple" , "Honeydew" );
+		list.add(m1);
+		list.add(m2);
+		return list;
+		}
 
-//==============================================END OF OPTION 3=================================================
+		public static void doAddMenu(ArrayList<Menu> menuList , ArrayList<Menu> m) {
+			if(!menuList.containsAll(m)) {
+				menuList.addAll(m);
+				System.out.println("Menu added!");
+			} else
+				System.out.println("Menu is updated as of last updated");
+			
+		}
+		public static void doViewMenu(ArrayList<Menu> menuList) {
+			Helper.line(80, "-");
+			System.out.println("MONTHLY MENU");
+			Helper.line(80, "-");
+			String output = String.format("%-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s\n","MENU ID" , "DATE" , "WESTERN" , "ASIAN" ,"VEGETARIAN" , "DRINK 1" , "DRINK 2" , "FRUIT 1" , "FRUIT 2");
+			output += retrieveAllMenu(menuList);
+			System.out.println(output);
+		}
+
+		public static String retrieveAllMenu(ArrayList<Menu> menuList) {
+			String output = "";
+			for(Menu m : menuList) {
+				output+= String.format("%-20d %-20s %-20s %-20s %-20s %-20s %-20s %-20s %-20s\n", m.getMenuID(), m.getDate(), m.getWestern(),m.getAsian() , m.getVegetarian(), m.getDrinks1(), m.getDrinks2(), m.getFruits1(),m.getFruits2());
+			}
+			return output;
+		}
+		
+		
+		public static void deleteMenu(ArrayList<Menu> menuList) {
+			C206_CaseStudy.doViewMenu(menuList);
+			int id = Helper.readInt("Enter menu id > ");
+			Boolean isDeleted = doDeleteMenu(menuList , id);
+			if(isDeleted)
+				System.out.println("Menu ID " + id + " is deleted");
+			else
+				System.out.println("Menu ID" + id + "deletion fail");
+		}
+		
+		public static Boolean doDeleteMenu(ArrayList<Menu> menuList, int id) {
+			boolean isDeleted = false;
+			for(Menu m : menuList) {
+				if(m.getMenuID() == id) {
+					menuList.remove(m);
+					isDeleted = true;
+				} else {
+					isDeleted = false;
+				}
+			}
+			return isDeleted;
+		}
+		private static void doUpdateMenu(ArrayList<Menu> menuList) {
+			// TODO Auto-generated method stub
+			System.out.println("not yet implemented");
+		}
+	//==============================================END OF OPTION 3================================================================
+
+
 
 
 }
