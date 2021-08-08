@@ -119,7 +119,7 @@ public class C206_CaseStudy {
 		foodList.add(new Food("Chicken Chop","Western"));
 		foodList.add(new Food("Plant based Chicken curry","Vegetarian"));
 		for(Int i = 0; i< foodList.size();i++){
-			output += String.format("%-10s %-10s\n",foodList.get(i).getDrink,foodList.get(i).getType);
+			output += String.format("%-10s %-10s\n",foodList.get(i).getName,foodList.get(i).getType);
 			
 		
 		}
