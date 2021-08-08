@@ -106,16 +106,30 @@ public class C206_CaseStudy {
 	//glenys
 	public static void addMenu() {
 		
+		
 	}
 	public void doMenuBank(){
 		
 		String output = String.format("%-10s %-10s", "NAME","TYPE");
-		foodList.add(new Food(name,type));
-		for(Food i: foodList){
-			output += String.format("%-10s %-10s",i.getname,i.getType);
+		foodList.add(new Food("Chicken Rice","Asian"));
+		foodList.add(new Food("Chicken Chop","Western"));
+		foodList.add(new Food("Plant based Chicken curry","Vegetarian"));
+		for(Int i = 0; i< foodList.size();i++){
+			output += String.format("%-10s %-10s",foodList.get(i).getname,foodList.get(i).getType);
 			
 		
 		}
+		for(Int i = 0; i< drinkList.size();i++){
+			output += String.format("%-10s %-10s",drinkList.get(i).getname,drinkList.get(i).getType);
+			
+		
+		}
+		for(Int i = 0; i< fruitList.size();i++){
+			output += String.format("%-10s %-10s",fruitList.get(i).getname,fruitList.get(i).getType);
+			
+		
+		}
+		
 		System.out.println(output);
 	}
 //==============================================END OF OPTION 2=================================================
