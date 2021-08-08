@@ -6,10 +6,11 @@ public class C206_CaseStudy {
 	private static ArrayList<Menu> list = new ArrayList<Menu>();
 	private static ArrayList<Food> foodName = new ArrayList<Food>();
 
-	private static ArrayList<Account> addAccount = new ArrayList<>();
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		ArrayList<Account> accountList = new ArrayList<>();
+		accountList.add(new Account("nshirinbz", "nsbz0105", "Student"));
 
 		int option = -1;
 
@@ -19,11 +20,20 @@ public class C206_CaseStudy {
 
 			//Shirin
 			if(userChoice == 1) {
-				C206_CaseStudy.loginAccount();
-				C206_CaseStudy.addAccount();
+				String userOpt = Helper.readString("Do you have an existing account? (Y/N) > ");
+				if (userOpt == "Y") {
+					C206_CaseStudy.loginAccount();
+				} else if (userOpt == "N"){
+					Account ac = addAccount();
+					C206_CaseStudy.addAccount(accountList, ac);
+				} else {
+					System.out.println("Please enter valid input");
+				}
 			}
-			//Glendys
+			//Glenys
 			else if (userChoice == 2) {
+				C206_CaseStudy.addMenu();
+				C206_CaseStudy.doViewMenu();
 
 			}
 			//Jannice
@@ -65,19 +75,68 @@ public class C206_CaseStudy {
 		System.out.println("5. Order Bill");
 		System.out.println("6. Quit\n");
 	}
+	
+// ================================================== OPTION 1 ===============================================================
 
 	public static void loginAccount() {
-
+		String loginUser = Helper.readString("Enter User Login > ");
+		String loginPw = Helper.readString("Enter User Password > ");
+		
 	}
 
 	// Shirin
-	public static void addAccount() {
+	public static Account addAccount() {
 		String username = Helper.readString("Enter a username > ");
 		String password = Helper.readString("Enter a password > ");
 		String role = Helper.readString("Enter a role (Parent/Student) > ");
-		addAccount.add(new Account(username, password, role));
-		System.out.println("Account has been successfully created!");
+		 Account ac = new Account(username, password, role);
+		 return ac;
 	}
+	
+	// Shirin
+	public static void addAccount(ArrayList<Account> accountList, Account ac) {
+		accountList.add(ac);
+		System.out.println("New User Account has been added!");
+	}
+	
+// ============================================= END OF OPTION 1 ===============================================================
+	
+// ===========================================  OPTION 2 ======================================================================
+	//glenys
+	public static void addMenu() {
+		ArrayList<Menu> menuList = new ArrayList<Menu>();
+		menuList.add(new Menu(foodlist.get(0).getType,foodList.get(0).getName,drinkList.get(0).getDrinks,fruitList.get(0).getFruits));
+		menuList.add(new Menu(foodlist.get(1).getType,foodList.get(1).getName,drinkList.get(1).getDrinks,fruitList.get(1).getFruits));
+		menuList.add(new Menu(foodlist.get(2).getType,foodList.get(2).getName,drinkList.get(2).getDrinks,fruitList.get(2).getFruits))
+			
+	}
+	public void doMenuBank(){
+		
+		String output = String.format("%-10s %-10s", "NAME","TYPE");
+		foodList.add(new Food("Chicken Rice","Asian"));
+		foodList.add(new Food("Chicken Chop","Western"));
+		foodList.add(new Food("Plant based Chicken curry","Vegetarian"));
+		for(Int i = 0; i< foodList.size();i++){
+			output += String.format("%-10s %-10s\n",foodList.get(i).getDrink,foodList.get(i).getType);
+			
+		
+		}
+		for(Int i = 0; i< drinkList.size();i++){
+			output += String.format("%-10s\n",drinkList.get(i).getDrinks);
+			
+		
+		}
+		for(Int i = 0; i< fruitList.size();i++){
+			output += String.format("%-10s\n",fruitList.get(i).getFruits);
+			
+		
+		}
+		
+		System.out.println(output);
+	}
+//==============================================END OF OPTION 2=================================================
+}
+	
 
 	// =============================================OPTION 3========================================================================
 		private static void menuChoice() {
