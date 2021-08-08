@@ -34,6 +34,7 @@ public class C206_CaseStudy {
 			}
 			//Glendys
 			else if (userChoice == 2) {
+				C206_CaseStudy.doViewMenu();
 
 			}
 			//Jannice
