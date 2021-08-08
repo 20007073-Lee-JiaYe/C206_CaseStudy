@@ -105,8 +105,8 @@ public class C206_CaseStudy {
 // ===========================================  OPTION 2 ======================================================================
 	//glenys
 	public static void addMenu() {
-		
-		
+		ArrayList<Menu> menuList = new ArrayList<Menu>();
+		menuList.add(new Menu(foodlist.get(0).getType,foodList.get(i).getName,drinkList.get(0).getName,fruitList.get(0).getName))
 	}
 	public void doMenuBank(){
 		
@@ -115,12 +115,12 @@ public class C206_CaseStudy {
 		foodList.add(new Food("Chicken Chop","Western"));
 		foodList.add(new Food("Plant based Chicken curry","Vegetarian"));
 		for(Int i = 0; i< foodList.size();i++){
-			output += String.format("%-10s %-10s",foodList.get(i).getname,foodList.get(i).getType);
+			output += String.format("%-10s %-10s",foodList.get(i).getDrink,foodList.get(i).getType);
 			
 		
 		}
 		for(Int i = 0; i< drinkList.size();i++){
-			output += String.format("%-10s %-10s",drinkList.get(i).getname,drinkList.get(i).getType);
+			output += String.format("%-10s",drinkList.get(i).getDrink);
 			
 		
 		}
