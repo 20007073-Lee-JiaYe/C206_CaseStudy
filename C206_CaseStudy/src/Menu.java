@@ -52,7 +52,8 @@ public class Menu {
 	public void setFruits(String fruits) {
 		this.fruits = fruits;
 	}
-
+	
+	
 
 	public void display() {
 		System.out.println("Menu type: "+  menuType );
