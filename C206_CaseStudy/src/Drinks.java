@@ -1,4 +1,3 @@
-
 public class Drinks {
 	
 	private String drinks;
