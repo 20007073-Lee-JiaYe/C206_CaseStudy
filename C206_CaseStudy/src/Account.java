@@ -1,4 +1,3 @@
-
 /**
  * I declare that this code was written by me.
  * I will not copy or allow others to copy my code.
@@ -27,5 +26,9 @@ public class Account {
 	
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public boolean accLogin(String uName, String uPassword) {
+		return true;
 	}
 }
