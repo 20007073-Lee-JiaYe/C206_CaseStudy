@@ -7,12 +7,12 @@
  */
 public class Account {
 	private String username;
-	public String password;
+	private String password;
 	private String role;
 	
 	public Account(String username, String password, String role) {
 		this.username = username;
-		this.password = "";
+		this.password = password;
 		this.role = role;
 	}
 	
@@ -24,11 +24,19 @@ public class Account {
 		return role;
 	}
 	
+	public String getPassword() {
+		return password;
+	}
+	
 	public void setPassword(String password) {
 		this.password = password;
 	}
 	
 	public boolean accLogin(String uName, String uPassword) {
-		return true;
+		return false;
+	}
+	
+	public boolean accDelete(String name) {
+		return false;
 	}
 }
