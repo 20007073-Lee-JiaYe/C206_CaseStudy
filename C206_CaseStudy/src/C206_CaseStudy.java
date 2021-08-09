@@ -25,7 +25,7 @@ public class C206_CaseStudy {
 			if (option == 1) {
 				Account loginAcct = getLoginAccount(accountList);
 				if (loginAcct != null) {
-//					choiceOption(loginAcct);
+//					choiceOption(loginAcct); 
 				}
 			}
 			
