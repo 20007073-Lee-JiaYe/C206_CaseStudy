@@ -191,7 +191,6 @@ public class C206_CaseStudy {
 			output += String.format("%-10s\n", fruitsList.get(i).getFruits());
 
 		}
-
 		System.out.println(output);
 	}
 //==============================================END OF OPTION 2=================================================
