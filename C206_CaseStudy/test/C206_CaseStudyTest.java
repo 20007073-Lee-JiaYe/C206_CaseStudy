@@ -40,7 +40,6 @@ public class C206_CaseStudyTest {
 	}
 
 //	==================== OPTION 3 MONTHLY MENU TEST CASE============================================
-	
 	@Test
 	public void doAddMenuTest() {
 		//Test that the list is not null but empty
