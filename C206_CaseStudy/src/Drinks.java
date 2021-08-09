@@ -10,5 +10,4 @@ public class Drinks {
 		return drinks;
 	}
 	
-
 }

@@ -9,7 +9,7 @@ public class LunchBoxMenu {
 	private String drinks2;
 	private String fruits1;
 	private String fruits2;
-
+	
 	public LunchBoxMenu(int menuID, String date, String western, String asian, String vegetarian, String drinks1,
 			String drinks2, String fruits1, String fruits2) {
 		this.menuID = menuID;

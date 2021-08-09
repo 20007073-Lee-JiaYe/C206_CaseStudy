@@ -37,7 +37,6 @@ public class Menu {
 		this.menuType = menuType;
 	}
 
-
 	public void setName(String name) {
 		this.name = name;
 	}

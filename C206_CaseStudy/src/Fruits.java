@@ -12,5 +12,4 @@ public class Fruits {
 		return fruits;
 	}
 	
-
 }
