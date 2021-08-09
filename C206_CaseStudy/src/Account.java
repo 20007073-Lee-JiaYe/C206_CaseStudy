@@ -5,6 +5,7 @@
  *
  * Nur Shirin 20017864, 5 Aug 2021 6:49:45 pm
  */
+
 public class Account {
 	private String username;
 	private String password;
@@ -33,10 +34,10 @@ public class Account {
 	}
 	
 	public boolean accLogin(String uName, String uPassword) {
-		return false;
+		return true;
 	}
 	
 	public boolean accDelete(String name) {
-		return false;
+		return true;
 	}
 }

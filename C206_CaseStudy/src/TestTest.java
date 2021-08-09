@@ -1,5 +1,3 @@
-package CodeTest;
-
 import java.util.ArrayList;
 
 /**
@@ -24,7 +22,7 @@ public class TestTest {
 	Account user1 = new Account("nshirinbz", "1234", "Student");
 
 	public static void main(String[] args) {
-
+		
 		Account user1 = new Account("nshirinbz", "1234", "Student");
 
 		ArrayList<Account> accountList = new ArrayList<>();
@@ -102,11 +100,10 @@ public class TestTest {
 
 			} else if (opt == 4) {
 				LunchBoxOrder();
-				addLunchBoxOrder();
-				deleteLunchBoxOrder();
 
 			} else if (opt == 5) {
-
+				// Jun Peng
+				
 			} else {
 				System.out.println("Thank you for using Lunch Box Online Ordering App!");
 			}
@@ -128,14 +125,14 @@ public class TestTest {
 		if (option == 1) {
 			C206_CaseStudy.doViewUserAcc(accountList);
 		} else if (option == 2) {
-
+			// Not updated yet
+			
 		} else if (option == 3) {
 			C206_CaseStudy.deleteAcc(accountList);
 		}
 	}
 
-	// ------------------------------------------OPTION
-	// 1---------------------------------------------------------------
+	// ------------------------------------------OPTION 1---------------------------------------------------------------
 
 	// Shirin
 	private static Account getLoginAccount(ArrayList<Account> accountList) {
@@ -155,7 +152,6 @@ public class TestTest {
 				System.out.println("Incorrect username or password");
 			}
 		}
-
 		return loginAcct;
 	}
 
@@ -179,7 +175,7 @@ public class TestTest {
 		Helper.line(80, "-");
 		System.out.println("MONTHLY MENU");
 		Helper.line(80, "-");
-		String output = String.format("%-20d %-20s %-20s\n", "USERNAME", "PASSWORD", "ROLE");
+		String output = String.format("%-20s %-20s %-20s\n", "USERNAME", "PASSWORD", "ROLE");
 		output += retrieveAccDetails(accountList);
 		System.out.println(output);
 	}
@@ -187,7 +183,7 @@ public class TestTest {
 	public static String retrieveAccDetails(ArrayList<Account> accountList) {
 		String output = "";
 		for (Account ac : accountList) {
-			output += String.format("%-20d %-20s %-20s\n", ac.getUsername(), ac.getPassword(), ac.getRole());
+			output += String.format("%-20s %-20s %-20s\n", ac.getUsername(), ac.getPassword(), ac.getRole());
 		}
 		return output;
 	}
@@ -215,11 +211,9 @@ public class TestTest {
 		return isDeleted;
 	}
 
-	// -----------------------------------------------END OF OPTION
-	// 1-----------------------------------------------------------------------
+	// -----------------------------------------------END OF OPTION 1-----------------------------------------------------------------------
 
-	// -----------------------------------------------OPTION
-	// 2-----------------------------------------------------------------------
+	// -----------------------------------------------OPTION 2-----------------------------------------------------------------------
 
 	// Glenys
 	public static void addFoodMenu() {
@@ -251,11 +245,9 @@ public class TestTest {
 		System.out.println(output);
 	}
 
-	// -----------------------------------------------END OF OPTION
-	// 2-----------------------------------------------------------------------
+	// -----------------------------------------------END OF OPTION 2-----------------------------------------------------------------------
 
-	// --------------------------------------------------OPTION
-	// 3---------------------------------------------------------------------
+	// --------------------------------------------------OPTION 3---------------------------------------------------------------------
 
 	// Jannice
 	private static void menuChoice() {
@@ -275,7 +267,7 @@ public class TestTest {
 			ArrayList<LunchBoxMenu> m = inputMenu();
 			C206_CaseStudy.doAddMenu(lunchBoxList, m);
 		} else if (choice == 2) {
-			C206_CaseStudy.doViewMenu();
+			C206_CaseStudy.doViewMenu(lunchBoxList);
 		} else if (choice == 3) {
 
 		} else if (choice == 4) {
@@ -352,11 +344,9 @@ public class TestTest {
 		System.out.println("not yet implemented");
 	}
 
-	// -----------------------------------------------END OF OPTION
-	// 3-----------------------------------------------------------------------
+	// -----------------------------------------------END OF OPTION 3-----------------------------------------------------------------------
 
-	// ------------------------------------------OPTION
-	// 4---------------------------------------------------------------
+	// ------------------------------------------OPTION 4---------------------------------------------------------------
 
 	// Kai Le
 	private static Order LunchBoxOrder() {
@@ -393,8 +383,7 @@ public class TestTest {
 			System.out.println("Order deleted.");
 		}
 	}
-	// ------------------------------------------END OF OPTION
-	// 4---------------------------------------------------------------
+	// ------------------------------------------END OF OPTION 4---------------------------------------------------------------
 
 	// Glenys
 	public static void addMenu() {
