@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 
+import CodeTest.Account;
+import CodeTest.C206_CaseStudy;
+import CodeTest.Helper;
+
 public class C206_CaseStudy {
 
 	private static ArrayList<Menu> menuList = new ArrayList<Menu>();
@@ -155,6 +159,46 @@ public class C206_CaseStudy {
 	public static void addAccount(ArrayList<Account> accountList, Account ac) {
 		accountList.add(ac);
 		System.out.println("New User Account has been added!");
+	}
+	
+	public static void doViewUserAcc(ArrayList<Account> accountList) {
+		Helper.line(80, "-");
+		System.out.println("MONTHLY MENU");
+		Helper.line(80, "-");
+		String output = String.format("%-20d %-20s %-20s\n", "USERNAME", "PASSWORD", "ROLE");
+		output += retrieveAccDetails(accountList);
+		System.out.println(output);
+	}
+
+	public static String retrieveAccDetails(ArrayList<Account> accountList) {
+		String output = "";
+		for (Account ac : accountList) {
+			output += String.format("%-20d %-20s %-20s\n", ac.getUsername(), ac.getPassword(), ac.getRole());
+		}
+		return output;
+	}
+
+	public static void deleteAcc(ArrayList<Account> accountList) {
+		C206_CaseStudy.doViewUserAcc(accountList);
+		String user = Helper.readString("Enter username > ");
+		Boolean isDeleted = doDeleteAcc(accountList, user);
+		if (isDeleted)
+			System.out.println("Username " + user + " account is deleted");
+		else
+			System.out.println("Username" + user + "account deletion fail");
+	}
+
+	public static Boolean doDeleteAcc(ArrayList<Account> accountList, String user) {
+		boolean isDeleted = false;
+		for (Account ac : accountList) {
+			if (ac.getUsername() == user) {
+				accountList.remove(ac);
+				isDeleted = true;
+			} else {
+				isDeleted = false;
+			}
+		}
+		return isDeleted;
 	}
 	
 // ============================================= END OF OPTION 1 ===============================================================

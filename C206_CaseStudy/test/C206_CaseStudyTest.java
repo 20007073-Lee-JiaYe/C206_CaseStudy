@@ -59,6 +59,21 @@ public class C206_CaseStudyTest {
 		assertSame("Test that account added is the same as 1st item of list", ac1, accountList.get(0));
 	}
 	
+	@Test
+	public void doViewAccTest() {
+		//Test that the list is not null but empty so that can add a new item
+		assertNotNull("Check if there is valid account arraylist to add to", accountList);
+
+		//Test if account items are retrieved is empty
+		String allAccDetails = C206_CaseStudy.retrieveAccDetails(accountList);
+		String testAccOutput = "";
+		assertEquals("Check ViewlunchBoxList", testAccOutput, allAccDetails);
+		
+		//Given empty list, after adding 1 account, test if size is 1
+		C206_CaseStudy.addAccount(accountList, ac1);
+		assertEquals("Test if account arraylist size is 1", 1, accountList);
+	}
+	
 //	============================= END OF OPTION 1 USER ACCOUNT TEST CASE===================================
 
 //	==================== OPTION 3 MONTHLY MENU TEST CASE============================================
