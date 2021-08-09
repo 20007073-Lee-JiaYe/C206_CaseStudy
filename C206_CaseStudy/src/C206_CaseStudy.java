@@ -6,7 +6,7 @@ import static org.junit.Assert.assertSame;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class C206_CaseStudy {
+public class C206_CaseStudy { 
 
 	
 	private Order order1;
@@ -34,7 +34,7 @@ public class C206_CaseStudy {
 
 
 		ArrayList<Account> accountList = new ArrayList<>();
-		accountList.add(user1);
+		accountList.add(user1); 
 
 		int option = -1;
 		
