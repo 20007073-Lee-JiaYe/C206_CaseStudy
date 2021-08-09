@@ -1,9 +1,5 @@
 import java.util.ArrayList;
 
-import CodeTest.Account;
-import CodeTest.C206_CaseStudy;
-import CodeTest.Helper;
-
 public class C206_CaseStudy {
 
 	private static ArrayList<Menu> menuList = new ArrayList<Menu>();
