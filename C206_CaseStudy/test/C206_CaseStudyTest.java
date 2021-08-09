@@ -74,6 +74,19 @@ public class C206_CaseStudyTest {
 		assertEquals("Test if account arraylist size is 1", 1, accountList);
 	}
 	
+	@Test
+	public void doDeleteAccTest() {
+		//Test if list still available after deletion of all accounts from accounts list
+		assertNotNull("Test that the list is still available to add to" , accountList);
+		
+		//Test that given an empty list - after adding the list of menu items , menu list is 2
+		C206_CaseStudy.addAccount(accountList , ac1);
+		assertSame(1 , accountList.size());
+		
+		//Test that the lunchBoxList size has decreased from 2 to 1
+		assertEquals("Test that the lunchBoxList size has decreased from 1 to 0", 0, lunchBoxList.size());
+	}
+	
 //	============================= END OF OPTION 1 USER ACCOUNT TEST CASE===================================
 
 //	==================== OPTION 3 MONTHLY MENU TEST CASE============================================
