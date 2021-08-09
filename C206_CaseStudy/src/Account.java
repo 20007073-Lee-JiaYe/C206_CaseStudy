@@ -31,5 +31,4 @@ public class Account {
 	public boolean accLogin(String uName, String uPassword) {
 		return true;
 	}
-	
 }

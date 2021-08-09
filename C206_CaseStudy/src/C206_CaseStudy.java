@@ -64,8 +64,8 @@ public class C206_CaseStudy {
 			}
 			//Glenys
 			else if (userChoice == 2) {
-				C206_CaseStudy.addMenu();
-				C206_CaseStudy.doViewMenu();
+//				C206_CaseStudy.addMenu();
+//				C206_CaseStudy.doViewMenu();
 
 			}
 			//Jannice
@@ -194,13 +194,10 @@ public class C206_CaseStudy {
 		System.out.println(output);
 	}
 //==============================================END OF OPTION 2=================================================
-
 	
+// =============================================OPTION 3========================================================================
 	
-
-	// =============================================OPTION 3========================================================================
 	private static void menuChoice() {
-		// TODO Auto-generated method stub
 		Helper.line(80, "-");
 		System.out.println("Menu");
 		Helper.line(80, "-");
