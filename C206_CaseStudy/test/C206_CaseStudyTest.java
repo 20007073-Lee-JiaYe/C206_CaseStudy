@@ -14,6 +14,9 @@ public class C206_CaseStudyTest {
 	private LunchBoxMenu m2;
 	private LunchBoxMenu m3;
 	
+	private ArrayList<Account> accountList;
+	private Account ac1;
+	
 	
 	@Before
 	public void setUp() throws Exception {
@@ -28,6 +31,9 @@ public class C206_CaseStudyTest {
 		menuItems.add(m1);
 		menuItems.add(m2);
 		menuItems.add(m3);
+		
+		ac1 = new Account ("jxnnic3", "2345", "Student");
+		accountList = new ArrayList<Account>();
 	}
 
 	
@@ -38,6 +44,22 @@ public class C206_CaseStudyTest {
 		assertTrue("C206_CaseStudy_SampleTest ", true);
 
 	}
+	
+//	=============================== OPTION 1 USER ACCOUNT TEST CASE========================================
+	@Test
+	public void doAddAccTest() {
+		//Test that account list is not null so that can add new item
+		assertNotNull("Test that there is a valid account to add to", accountList);
+		
+		//Given empty list, after adding 1 account, the size of the list is 1
+		C206_CaseStudy.addAccount(accountList, ac1);
+		assertEquals("Test if account list arraylist size is 1", 1, accountList.size());
+		
+		//Test that item just added is the same as the first item of list
+		assertSame("Test that account added is the same as 1st item of list", ac1, accountList.get(0));
+	}
+	
+//	============================= END OF OPTION 1 USER ACCOUNT TEST CASE===================================
 
 //	==================== OPTION 3 MONTHLY MENU TEST CASE============================================
 	@Test
