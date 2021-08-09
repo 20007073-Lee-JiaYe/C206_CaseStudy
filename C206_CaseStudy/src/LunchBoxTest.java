@@ -45,17 +45,17 @@ public class LunchBoxTest {
 		assertNotNull("Test if there is arraylist for orders to add in to", orderList);
 		
 		// Test if the order list is empty when retrieving from main class
-		C206_CaseStudy.viewLunchBoxOrder(orderList, order1);
+		C206_CaseStudy.viewLunchBoxOrder(orderList);
 		String testOutput = "";
 		assertEquals("Check if the order list is empty", testOutput, orderList);
 		
 		// Test if  the list is empty after adding users
-		C206_CaseStudy.viewLunchBoxOrder(orderList, order1);
+		C206_CaseStudy.viewLunchBoxOrder(orderList);
 		C206_CaseStudy.addLunchBoxOrder(orderList, order1);
 		C206_CaseStudy.addLunchBoxOrder(orderList, order2);
 		assertEquals("Test if the order list size is 2", 2, orderList.size());
 		
-		 C206_CaseStudy.viewLunchBoxOrder(orderList, order1);
+		 C206_CaseStudy.viewLunchBoxOrder(orderList);
 		testOutput = String.format("%-30d %-30s %-30s %-30s %-30s\n", 123, "1-Aug-2021", "Burger", "Orange Juice", "Apple Slice");
 		testOutput += String.format("%-30d %-30s %-30s %-30s %-30s\n", 124, "2-Aug-2021", "dumpling soup", "apple juice", "Honey Dew");
 		assertEquals("Check if the result  is the same", testOutput, orderList);
@@ -67,20 +67,20 @@ public class LunchBoxTest {
 		
 		//Test if the order id entered exist in the user account list
 		C206_CaseStudy.addLunchBoxOrder(orderList, order1);
-		C206_CaseStudy.viewLunchBoxOrder(orderList, order1);
+		C206_CaseStudy.viewLunchBoxOrder(orderList);
 		String deleteorderid = "123";
 		assertSame("Test if the order id exists in the user account list", deleteorderid, orderList.get(0).getorderid());
 		
 		// Test if the order list size is 1 when 1 order is deleted
-		C206_CaseStudy.viewLunchBoxOrder(orderList,order1);
+		C206_CaseStudy.viewLunchBoxOrder(orderList);
 		orderList.remove(order1);
 		System.out.println("Deleted successfully");
 		assertEquals("Test if the user account list size is 1", 1, orderList.size());
 		
 		//Test if after order is deleted it do not exists in the list
 		C206_CaseStudy.addLunchBoxOrder(orderList, order1);
-		C206_CaseStudy.viewLunchBoxOrder(orderList,order1);
-		C206_CaseStudy.deleteLunchBoxOrder(orderList, order1);
+		C206_CaseStudy.viewLunchBoxOrder(orderList);
+		C206_CaseStudy.deleteLunchBoxOrder(orderList);;
 		assertEquals("Test if the user account list size is 0", 0, orderList.size());
 	}
 }

@@ -220,10 +220,7 @@ public class C206_CaseStudy {
 		accountList.add(ac);
 		System.out.println("New User Account has been added!");
 	}
-<<<<<<< HEAD
 
-=======
-	
 	public static void doViewUserAcc(ArrayList<Account> accountList) {
 		Helper.line(80, "-");
 		System.out.println("MONTHLY MENU");
@@ -264,7 +261,7 @@ public class C206_CaseStudy {
 		return isDeleted;
 	}
 	
->>>>>>> branch 'master' of https://github.com/20007073-Lee-JiaYe/C206_CaseStudy.git
+
 // ============================================= END OF OPTION 1 ===============================================================
 
 	
