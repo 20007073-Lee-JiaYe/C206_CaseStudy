@@ -109,11 +109,10 @@ public class C206_CaseStudy {
 				lunchbox();
 				int lunchBox = Helper.readInt("Enter option > ");
 				if (lunchBox  == 1) {
-					addLunchBoxOrder();
+					LunchBoxOrder();
 				}else if (lunchBox == 2) {
-					viewLunchBoxOrder();
-				}else if (lunchBox == 3) {
-					deleteLunchBoxOrder();
+					viewLunchBoxOrder(orderList);				
+					deleteLunchBoxOrder(orderList);
 				}else {
 					System.out.println("Invalid Option");
 				}
@@ -461,33 +460,33 @@ public class C206_CaseStudy {
 	
 // OPTION 4
 // KAI LE TO EDIT AGAIN
-	private static void updateLunchBoxOrder(ArrayList<Order> orderList) {
-		System.out.println("UPDATE LUNCH BOX ORDER");
-		String dateorder = Helper.readString("Enter the order date : ");
-		if (LocalDate.parse(dateorder).getDayOfYear() - LocalDate.now().getDayOfYear() > 0) {
-			for (Order o : orderList) {
-				if (LocalDate.parse(dateorder) == o.getdate()) {
-					doViewMenu();
-					for (Menu m : menuList) {	
-					String cuisine = Helper.readString("Enter cuisine : ");
-					if (cuisine != null) {
-						if (cuisine.equalsIgnoreCase(m.getMenuType())) {
-							o.setmeal(m.getName());
-							o.setdrink(m.getDrinks());
-							o.setfruit(m.getFruits());
-						}
-					
-						} else {
-							System.out.println("Please enter a valid cuisine.");
-						}
-					
-			}
-		} else {
-			System.out.println("No order found on the given date");
-		}
-	}
-} else {
-	System.out.println("Please enter a cuisine");
-}
-}
+	//private static void updateLunchBoxOrder(ArrayList<Order> orderList) {
+//		//System.out.println("UPDATE LUNCH BOX ORDER");
+//		//String dateorder = Helper.readString("Enter the order date : ");
+//		//if (LocalDate.parse(dateorder).getDayOfYear() - LocalDate.now().getDayOfYear() > 0) {
+//			//for (Order o : orderList) {
+//				//if (LocalDate.parse(dateorder) == o.getdate()) {
+//				//doViewMenu();
+//					//for (Menu m : menuList) {	
+//					//String cuisine = Helper.readString("Enter cuisine : ");
+//					//if (cuisine != null) {
+//						if (cuisine.equalsIgnoreCase(m.getMenuType())) {
+//							o.setmeal(m.getName());
+//							o.setdrink(m.getDrinks());
+//							o.setfruit(m.getFruits());
+//						}
+//					//
+//						} else {
+//		//.out.println("Please enter a valid cuisine.");
+//						}
+//					
+//			}
+//		} else {
+//			System.out.println("No order found on the given date");
+//		}
+//	}
+//} else {
+//	System.out.println("Please enter a cuisine");
+//}
+//}
 }
