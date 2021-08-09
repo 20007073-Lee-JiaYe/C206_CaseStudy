@@ -1,4 +1,3 @@
-
 public class Fruits {
 	
 	private String fruits;
@@ -13,5 +12,4 @@ public class Fruits {
 		return fruits;
 	}
 	
-
 }

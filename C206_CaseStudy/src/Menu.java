@@ -1,4 +1,3 @@
-
 public class Menu {
 	private String menuType;
 	private String name;
@@ -37,7 +36,6 @@ public class Menu {
 	public void setMenuType(String menuType) {
 		this.menuType = menuType;
 	}
-
 
 	public void setName(String name) {
 		this.name = name;

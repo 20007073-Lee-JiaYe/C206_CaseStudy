@@ -1,4 +1,3 @@
-
 public class Drinks {
 	
 	private String drinks;
@@ -11,5 +10,4 @@ public class Drinks {
 		return drinks;
 	}
 	
-
 }
