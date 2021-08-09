@@ -163,7 +163,6 @@ public class C206_CaseStudy {
 	
 	// Glenys
 	public static void addFoodMenu() {
-		ArrayList<Menu> menuList = new ArrayList<Menu>();
 		menuList.add(new Menu(foodName.get(0).getType(), foodName.get(0).getName(), drinksList.get(0).getDrinks(),
 				fruitsList.get(0).getFruits()));
 		menuList.add(new Menu(foodName.get(1).getType(), foodName.get(1).getName(), drinksList.get(1).getDrinks(),
