@@ -94,9 +94,23 @@ public class C206_CaseStudy {
 			} else if (opt == 3) {
 				menuChoice();
 				doViewMenu();
-
-			} else if (opt == 4) {
-				LunchBoxOrder();
+			}
+			
+				else if(opt == 4) {
+					int lunchBox = Helper.readInt("Enter option > ");
+					lunchbox();
+					if (lunchBox  == 1) {
+						LunchBoxOrder();
+					}else if (lunchBox == 2) {
+						viewLunchBoxOrder(orderList);				
+						
+					}else if (lunchBox==3){
+						deleteLunchBoxOrder(orderList);
+						
+					}else
+					{
+						System.out.println("Invalid Option");
+					}
 
 			} else if (opt == 5) {
 				// Jun Peng
@@ -126,6 +140,13 @@ public class C206_CaseStudy {
 		} else if (option == 3) {
 			C206_CaseStudy.deleteAcc(accountList);
 		}
+	}
+
+	private static void lunchbox() {
+		Helper.line(60, "-");
+		System.out.println("1. Add Lunch Box Order ");
+		System.out.println("2. View Lunch Box Order");
+		System.out.println("3. Delete Lunch Box Order");
 	}
 
 // ================================================== OPTION 1 ===============================================================

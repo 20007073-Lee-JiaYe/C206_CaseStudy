@@ -1,4 +1,5 @@
 import static org.junit.Assert.*;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,7 +38,7 @@ public class LunchBoxTest {
 		C206_CaseStudy.addLunchBoxOrder(orderList,order1);
 		assertEquals("Test that the order ArrayList size is 1", 1, orderList.size());
 		assertSame("Test that order is added", order1, orderList.get(0));
-		
+		 
 		// test that the order is 2 when the user input another order
 		C206_CaseStudy.addLunchBoxOrder(orderList, order2);
 		assertEquals("Test that the order ArrayList size is 2", 2, orderList.size());
