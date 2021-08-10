@@ -187,8 +187,8 @@ public void viewLunchBoxTest() {
 	assertEquals("Test if the order list size is 2", 2, orderList.size());
 	
 	 C206_CaseStudy.viewLunchBoxOrder(orderList);
-	testOutput = String.format("%-30d %-30s %-30s %-30s %-30s\n", 123, "1-Aug-2021", "Burger", "Orange Juice", "Apple Slice");
-	testOutput += String.format("%-30d %-30s %-30s %-30s %-30s\n", 124, "2-Aug-2021", "dumpling soup", "apple juice", "Honey Dew");
+	testOutput = String.format("%-30d %-10s %-30s %-30s %-20s\n", 123, "1-Aug-2021", "Burger", "Orange Juice", "Apple Slice");
+	testOutput += String.format("%-30d %-10s %-30s %-30s %-20s\n", 124, "2-Aug-2021", "dumpling soup", "apple juice", "Honey Dew");
 	assertEquals("Check if the result  is the same", testOutput, orderList);
 }
 	

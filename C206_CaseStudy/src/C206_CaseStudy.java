@@ -449,10 +449,10 @@ public class C206_CaseStudy {
 // KAI LE
 	public static void viewLunchBoxOrder(ArrayList<Order> orderList) {
 		System.out.println("VIEW LUNCH BOX ORDER");
-		System.out.println(String.format("%-5s %-10s %-10s %-10s %s", "ID", "DATE", "MEAL", "DRINK", "FRUIT"));
+		System.out.println(String.format("%-5s %-10s %-10s %-15s %s", "ID", "DATE", "MEAL", "DRINK", "FRUIT"));
 		for (Order odr : orderList) {
 
-			System.out.println(String.format("%-10d %-10s %-10s %-10s %-10s", odr.getorderid(), odr.getdate(),
+			System.out.println(String.format("%-5d %-10s %-10s %-15s %s", odr.getorderid(), odr.getdate(),
 					odr.getmeal(), odr.getdrink(), odr.getfruit()));
 		}
 
