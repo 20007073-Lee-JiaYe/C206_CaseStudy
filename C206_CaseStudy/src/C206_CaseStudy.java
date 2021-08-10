@@ -17,7 +17,6 @@ public class C206_CaseStudy {
 	private static ArrayList<LunchBoxMenu> list = new ArrayList<LunchBoxMenu>();
 
 	private static ArrayList<Account> accountList = new ArrayList<>();
-	Account user1 = new Account("nshirinbz", "1234", "Student");
 
 	public static void main(String[] args) {
 
