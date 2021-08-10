@@ -9,7 +9,7 @@ public class C206_CaseStudy {
 
 	private static ArrayList<Drinks> drinksList = new ArrayList<Drinks>();
 	private static ArrayList<Fruits> fruitsList = new ArrayList<Fruits>();
-	private static ArrayList<Food> foodName = new ArrayList<Food>();
+	private static ArrayList<Food> foodName = new ArrayList<Food>(); 
 
 	private static ArrayList<Order> orderList = new ArrayList<Order>();
 
