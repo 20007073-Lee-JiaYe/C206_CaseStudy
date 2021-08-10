@@ -290,7 +290,7 @@ public class TestTest {
 		} else if (choice == 2) {
 			C206_CaseStudy.doViewMenu(lunchBoxList);
 		} else if (choice == 3) {
-			
+			C206_CaseStudy.doUpdateMenu(lunchBoxList);
 		} else if (choice == 4) {
 			C206_CaseStudy.deleteMenu(lunchBoxList);
 		} else {

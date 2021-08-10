@@ -1,3 +1,5 @@
+//MAIN CODES
+
 import java.util.ArrayList;
 
 public class C206_CaseStudy {
@@ -66,49 +68,50 @@ public class C206_CaseStudy {
 	}
 
 	private static void choiceOption(Account loginAcct) {
-	    int opt = -1;
+		int opt = -1;
 
-	    while (opt != 5) {
+		while (opt != 5) {
 
-	      appChoice();
-	      opt = Helper.readInt("Enter choice > ");
+			appChoice();
+			opt = Helper.readInt("Enter choice > ");
 
-	      if (opt == 1) {
-	        userOpt();
+			if (opt == 1) {
+				userOpt();
 
-	      } else if (opt == 2) {
-	        addFoodMenu();
-	        doMenuBank();
+			} else if (opt == 2) {
+				addFoodMenu();
+				doMenuBank();
 
-	      } else if (opt == 3) {
-	        menuChoice();
-	        doViewMenu();
-	      }
-	      
-	        else if(opt == 4) {
-	          int lunchBox = Helper.readInt("Enter option > ");
-	          lunchbox();
-	          if (lunchBox  == 1) {
-	            LunchBoxOrder();
-	          }else if (lunchBox == 2) {
-	            viewLunchBoxOrder(orderList);        
-	            
-	          }else if (lunchBox==3){
-	            deleteLunchBoxOrder(orderList);
-	            
-	          }else
-	          {
-	            System.out.println("Invalid Option");
-	          }
+			} else if (opt == 3) {
+				menuChoice();
+				doViewMenu();
+			}
 
-	      } else if (opt == 5) {
-	        // Jun Peng
+			else if (opt == 4) {
+				int lunchBox = Helper.readInt("Enter option > ");
+				lunchbox();
+				if (lunchBox == 1) {
+					LunchBoxOrder();
+				} else if (lunchBox == 2) {
+					viewLunchBoxOrder(orderList);
 
-	      } else {
-	        System.out.println("Thank you for using Lunch Box Online Ordering App!");
-	      }
-	    }
-	  }
+				} else if (lunchBox == 3) {
+					deleteLunchBoxOrder(orderList);
+
+				} else {
+					System.out.println("Invalid Option");
+				}
+
+			} else if (opt == 5) {
+				// Jun Peng
+				orderBill();
+
+			} else {
+				System.out.println("Thank you for using Lunch Box Online Ordering App!");
+			}
+		}
+	}
+
 // Shirin
 	private static void userOpt() {
 		Helper.line(80, "-");
@@ -431,7 +434,7 @@ public class C206_CaseStudy {
 
 	}
 
-	private static void doUpdateMenu(ArrayList<LunchBoxMenu> lunchBoxList) {
+	public static void doUpdateMenu(ArrayList<LunchBoxMenu> lunchBoxList) {
 // TODO Auto-generated method stub
 		System.out.println("not yet implemented");
 	}
@@ -479,4 +482,23 @@ public class C206_CaseStudy {
 //}
 //}
 // ============================================================END OF OPTION 4============================================================
+	
+	private static void orderBill() {
+	    String bill = "";
+	    int orderid = Helper.readInt("Select order number to bill");
+	    System.out.println(bill);
+	    String update = "";
+	    int orderidTotal = 50;
+	    while (orderidTotal != 0) {
+	      System.out.println("Thank you for paying");
+	      update = "paid";
+	    }
+	      System.out.println("Your bill is less than $0!");
+	      update = "not paid";
+	    int date = 0;
+	    int dueDate = 0;
+	    if (dueDate > date) {
+	      System.out.println("Payment is overdue!");
+	    }
+	}
 }
