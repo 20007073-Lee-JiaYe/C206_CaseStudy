@@ -99,8 +99,9 @@ public class TestTest {
 			} else if (opt == 3) {
 				menuChoice();
 				doViewMenu();
+			}
 
-				else if(userChoice == 4) {
+				else if(opt == 4) {
 					lunchbox();
 					int lunchBox = Helper.readInt("Enter option > ");
 					if (lunchBox  == 1) {
@@ -146,6 +147,12 @@ public class TestTest {
 		}
 	}
 
+	private static void lunchbox() {
+	    Helper.line(60, "-");
+	    System.out.println("1. Add Lunch Box Order ");
+	    System.out.println("2. View Lunch Box Order");
+	    System.out.println("3. Delete Lunch Box Order");
+	  }
 	// ------------------------------------------OPTION 1---------------------------------------------------------------
 
 	// Shirin
@@ -283,7 +290,7 @@ public class TestTest {
 		} else if (choice == 2) {
 			C206_CaseStudy.doViewMenu(lunchBoxList);
 		} else if (choice == 3) {
-
+			
 		} else if (choice == 4) {
 			C206_CaseStudy.deleteMenu(lunchBoxList);
 		} else {
