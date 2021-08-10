@@ -42,6 +42,19 @@ public class AccountTest {
 	}
 	
 	@Test
+	public void doDeleteAccTest() {
+		//Test if list still available after deletion of all accounts from accounts list
+		assertNotNull("Test that the list is still available to add to" , accountList);
+		
+		//Test that given an empty list - after adding the list of menu items , menu list is 2
+		C206_CaseStudy.addAccount(accountList , ac1);
+		assertSame(1 , accountList.size());
+		
+		//Test that the lunchBoxList size has decreased from 2 to 1
+		assertEquals("Test that the lunchBoxList size has decreased from 1 to 0", 1, accountList.size());
+	}
+	
+	@Test
 	public void doViewAccTest() {
 		//Test that the list is not null but empty so that can add a new item
 		assertNotNull("Check if there is valid account arraylist to add to", accountList);
@@ -53,19 +66,6 @@ public class AccountTest {
 		
 		//Given empty list, after adding 1 account, test if size is 1
 		C206_CaseStudy.addAccount(accountList, ac1);
-	}
-	
-	@Test
-	public void doDeleteAccTest() {
-		//Test if list still available after deletion of all accounts from accounts list
-		assertNotNull("Test that the list is still available to add to" , accountList);
-		
-		//Test that given an empty list - after adding the list of menu items , menu list is 2
-		C206_CaseStudy.addAccount(accountList , ac1);
-		assertSame(1 , accountList.size());
-		
-		//Test that the lunchBoxList size has decreased from 2 to 1
-		assertEquals("Test that the lunchBoxList size has decreased from 1 to 0", 1, accountList.size());
 	}
 	
 //	============================= END OF OPTION 1 USER ACCOUNT TEST CASE===================================

@@ -9,7 +9,7 @@ public class C206_CaseStudy {
 
 	private static ArrayList<Drinks> drinksList = new ArrayList<Drinks>();
 	private static ArrayList<Fruits> fruitsList = new ArrayList<Fruits>();
-	private static ArrayList<Food> foodName = new ArrayList<Food>();
+	private static ArrayList<Food> foodName = new ArrayList<Food>(); 
 
 	private static ArrayList<Order> orderList = new ArrayList<Order>();
 
@@ -248,17 +248,15 @@ public class C206_CaseStudy {
 		}
 		return isDeleted;
 	}
-<<<<<<< HEAD
 	
 
 // ============================================= END OF OPTION 1 ===============================================================
 
 	
-=======
+
 
 // ============================================END OF OPTION 1=================================================================
 
->>>>>>> branch 'master' of https://github.com/20007073-Lee-JiaYe/C206_CaseStudy.git
 // ===========================================  OPTION 2 ======================================================================
 
 	// Glenys
