@@ -109,7 +109,6 @@ public class C206_CaseStudy {
 	}
 
 	// Shirin
-
 	private static void userOpt() {
 		Helper.line(80, "-");
 		System.out.println("User Account");
@@ -123,7 +122,7 @@ public class C206_CaseStudy {
 		if (option == 1) {
 			C206_CaseStudy.doViewUserAcc(accountList);
 		} else if (option == 2) {
-			// Not updated yet
+			C206_CaseStudy.updateAcc(accountList);
 
 		} else if (option == 3) {
 			C206_CaseStudy.deleteAcc(accountList);
@@ -133,6 +132,7 @@ public class C206_CaseStudy {
 // ================================================== OPTION 1 ===============================================================
 
 	// Shirin
+	
 	private static Account getLoginAccount(ArrayList<Account> accountList) {
 
 		Account loginAcct = null;
@@ -153,7 +153,6 @@ public class C206_CaseStudy {
 		return loginAcct;
 	}
 
-	// Shirin
 	public static Account addAccount() {
 		String username = Helper.readString("Enter a username > ");
 		String password = Helper.readString("Enter a password > ");
@@ -163,10 +162,31 @@ public class C206_CaseStudy {
 
 	}
 
-	// Shirin
 	public static void addAccount(ArrayList<Account> accountList, Account ac) {
 		accountList.add(ac);
 		System.out.println("New User Account has been added!");
+	}
+	
+	public static boolean doUpdateAcc(ArrayList<Account> accountList, String pw) {
+		boolean isUpdated = false;
+		for (int i = 0; i < accountList.size(); i++) {
+			if(pw.equals(accountList.get(i).getPassword()) == false) {
+				accountList.get(i).setPassword(pw);
+				isUpdated = true;
+			}
+		}
+		return isUpdated;
+	}
+	
+	public static void updateAcc(ArrayList<Account> accountList) {
+		C206_CaseStudy.doViewUserAcc(accountList);
+		String pw = Helper.readString("Enter new password > ");
+		Boolean isUpdated = doUpdateAcc(accountList, pw);
+		if (isUpdated == true) {
+			System.out.println("Invalid password");
+		} else {
+			System.out.println("Account password has been updated");
+		}
 	}
 
 	public static void doViewUserAcc(ArrayList<Account> accountList) {
