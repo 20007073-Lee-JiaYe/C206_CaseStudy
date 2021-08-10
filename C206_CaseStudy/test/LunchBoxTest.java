@@ -34,7 +34,7 @@ public class LunchBoxTest {
 		assertNotNull("Test if there is a valid Lunch Box to add to", orderList);
 		
 		// test if the order list is 1 when the user input an order
-		C206_CaseStudy.addLunchBoxOrder(orderList, order1);
+		C206_CaseStudy.addLunchBoxOrder(orderList,order1);
 		assertEquals("Test that the order ArrayList size is 1", 1, orderList.size());
 		assertSame("Test that order is added", order1, orderList.get(0));
 		
