@@ -17,7 +17,6 @@ public class C206_CaseStudy {
 	private static ArrayList<LunchBoxMenu> list = new ArrayList<LunchBoxMenu>();
 
 	private static ArrayList<Account> accountList = new ArrayList<>();
-	Account user1 = new Account("nshirinbz", "1234", "Student");
 
 	public static void main(String[] args) {
 
@@ -109,7 +108,6 @@ public class C206_CaseStudy {
 	}
 
 	// Shirin
-
 	private static void userOpt() {
 		Helper.line(80, "-");
 		System.out.println("User Account");
@@ -123,7 +121,7 @@ public class C206_CaseStudy {
 		if (option == 1) {
 			C206_CaseStudy.doViewUserAcc(accountList);
 		} else if (option == 2) {
-			// Not updated yet
+			C206_CaseStudy.updateAcc(accountList);
 
 		} else if (option == 3) {
 			C206_CaseStudy.deleteAcc(accountList);
@@ -133,6 +131,7 @@ public class C206_CaseStudy {
 // ================================================== OPTION 1 ===============================================================
 
 	// Shirin
+	
 	private static Account getLoginAccount(ArrayList<Account> accountList) {
 
 		Account loginAcct = null;
@@ -153,7 +152,6 @@ public class C206_CaseStudy {
 		return loginAcct;
 	}
 
-	// Shirin
 	public static Account addAccount() {
 		String username = Helper.readString("Enter a username > ");
 		String password = Helper.readString("Enter a password > ");
@@ -163,10 +161,31 @@ public class C206_CaseStudy {
 
 	}
 
-	// Shirin
 	public static void addAccount(ArrayList<Account> accountList, Account ac) {
 		accountList.add(ac);
 		System.out.println("New User Account has been added!");
+	}
+	
+	public static boolean doUpdateAcc(ArrayList<Account> accountList, String pw) {
+		boolean isUpdated = false;
+		for (int i = 0; i < accountList.size(); i++) {
+			if(pw.equals(accountList.get(i).getPassword()) == false) {
+				accountList.get(i).setPassword(pw);
+				isUpdated = true;
+			}
+		}
+		return isUpdated;
+	}
+	
+	public static void updateAcc(ArrayList<Account> accountList) {
+		C206_CaseStudy.doViewUserAcc(accountList);
+		String pw = Helper.readString("Enter new password > ");
+		Boolean isUpdated = doUpdateAcc(accountList, pw);
+		if (isUpdated == true) {
+			System.out.println("Invalid password");
+		} else {
+			System.out.println("Account password has been updated");
+		}
 	}
 
 	public static void doViewUserAcc(ArrayList<Account> accountList) {
@@ -180,8 +199,8 @@ public class C206_CaseStudy {
 
 	public static String retrieveAccDetails(ArrayList<Account> accountList) {
 		String output = "";
-		for (Account ac : accountList) {
-			output += String.format("%-20s %-20s %-20s\n", ac.getUsername(), ac.getPassword(), ac.getRole());
+		for (int i = 0; i < accountList.size(); i++) {
+			output += String.format("%-20s %-20s %-20s\n", accountList.get(i).getUsername(), accountList.get(i).getPassword(), accountList.get(i).getRole());
 		}
 		return output;
 	}
