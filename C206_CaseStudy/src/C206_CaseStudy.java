@@ -20,7 +20,7 @@ public class C206_CaseStudy {
 
 	public static void main(String[] args) {
 
-		Account user1 = new Account("nshirinbz", "nsbz0105", "Student");
+		Account user1 = new Account("tom", "1234", "Student");
 
 		ArrayList<Account> accountList = new ArrayList<>();
 		accountList.add(user1);
@@ -227,9 +227,17 @@ public class C206_CaseStudy {
 		}
 		return isDeleted;
 	}
+<<<<<<< HEAD
+	
+
+// ============================================= END OF OPTION 1 ===============================================================
+
+	
+=======
 
 // ============================================END OF OPTION 1=================================================================
 
+>>>>>>> branch 'master' of https://github.com/20007073-Lee-JiaYe/C206_CaseStudy.git
 // ===========================================  OPTION 2 ======================================================================
 
 	// Glenys

@@ -18,6 +18,8 @@ public class TestTest {
 	private static ArrayList<LunchBoxMenu> lunchBoxList = new ArrayList<LunchBoxMenu>();
 	private static ArrayList<LunchBoxMenu> list = new ArrayList<LunchBoxMenu>();
 
+	
+	private static ArrayList<Order> orderList = new ArrayList<Order>();
 	private static ArrayList<Account> accountList = new ArrayList<>();
 	Account user1 = new Account("nshirinbz", "1234", "Student");
 
@@ -98,9 +100,21 @@ public class TestTest {
 				menuChoice();
 				doViewMenu();
 
-			} else if (opt == 4) {
-				LunchBoxOrder();
-
+				else if(userChoice == 4) {
+					lunchbox();
+					int lunchBox = Helper.readInt("Enter option > ");
+					if (lunchBox  == 1) {
+						LunchBoxOrder();
+					}else if (lunchBox == 2) {
+						viewLunchBoxOrder(orderList);				
+						
+					}else if (lunchBox==3){
+						deleteLunchBoxOrder(orderList);
+						
+					}else
+					{
+						System.out.println("Invalid Option");
+					}
 			} else if (opt == 5) {
 				// Jun Peng
 				
@@ -350,39 +364,61 @@ public class TestTest {
 
 	// Kai Le
 	private static Order LunchBoxOrder() {
-
 		System.out.println("ADD LUNCH BOX ORDER");
 		int orderid = Helper.readInt("Enter order id :");
 		String dateorder = Helper.readString("Enter the date you want to have the lunchbox : ");
 		String meal = Helper.readString("Enter meal : ");
 		String drink = Helper.readString("Enter drink: ");
 		String fruit = Helper.readString("Enter fruit: ");
-
-		Order o = new Order(orderid, dateorder, meal, drink, fruit);
-		return o;
-	}
-
+				
+			Order o = new Order(orderid, dateorder, meal, drink, fruit);
+			addLunchBoxOrder(orderList,o);
+				return o;
+			}
+			
 	public static void addLunchBoxOrder(ArrayList<Order> orderList, Order o) {
+		
 		orderList.add(o);
 		System.out.println("Order added.");
 	}
-
-	public static void viewLunchBoxOrder(ArrayList<Order> orderList, Order o) {
+	
+	
+		
+// OPTION 4
+// KAI LE
+	public static void viewLunchBoxOrder(ArrayList<Order> orderList) {
 		System.out.println("VIEW LUNCH BOX ORDER");
 		System.out.println(String.format("%-5s %-10s %-10s %-10s %s", "ID", "DATE", "MEAL", "DRINK", "FRUIT"));
 		for (Order odr : orderList) {
-			System.out.println(String.format("%-10d %-10s %-10s %-10s %-10s", o.getorderid(), o.getdate(), o.getmeal(),
-					o.getdrink(), o.getfruit()));
+		
+		System.out.println(String.format("%-10d %-10s %-10s %-10s %-10s", odr.getorderid(), odr.getdate(),odr.getmeal(),odr.getdrink(),odr.getfruit()));
 		}
+		
 	}
+	
 
-	public static void deleteLunchBoxOrder(ArrayList<Order> orderList, Order o) {
+
+
+	// ==============================================END OF OPTION 3================================================================
+
+
+
+// OPTION 4
+// KAI LE
+	public static void deleteLunchBoxOrder(ArrayList<Order> orderList) {
 		int orderids = Helper.readInt("Enter order id : ");
-		if (orderids == o.getorderid()) {
-			orderList.remove(o);
-			System.out.println("Order deleted.");
+		for (int i=0; i<orderList.size(); i++) {
+			if (orderids == orderList.get(i).getorderid()) {
+				orderList.remove(i);
+				System.out.println("Order deleted.");
 		}
+		
 	}
+}
+	
+	
+
+	
 	// ------------------------------------------END OF OPTION 4---------------------------------------------------------------
 
 	// Glenys
