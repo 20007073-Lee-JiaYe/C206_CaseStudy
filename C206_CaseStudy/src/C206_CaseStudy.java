@@ -1,16 +1,10 @@
-import static org.junit.Assert.assertEquals;
-
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertSame;
-
-import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class C206_CaseStudy { 
+public class C206_CaseStudy {
 
-	
 	private Order order1;
 	private Order order2;
+
 	private static ArrayList<Menu> menuList = new ArrayList<Menu>();
 
 	private static ArrayList<Drinks> drinksList = new ArrayList<Drinks>();
@@ -19,130 +13,47 @@ public class C206_CaseStudy {
 
 	private static ArrayList<Order> orderList = new ArrayList<Order>();
 
-	
-
 	private static ArrayList<LunchBoxMenu> lunchBoxList = new ArrayList<LunchBoxMenu>();
 	private static ArrayList<LunchBoxMenu> list = new ArrayList<LunchBoxMenu>();
 
+	private static ArrayList<Account> accountList = new ArrayList<>();
+	Account user1 = new Account("nshirinbz", "1234", "Student");
 
 	public static void main(String[] args) {
 
-		// TODO Auto-generated method stub
-
-		
-		Account user1 = new Account("nshirinbz", "nsbz0105", "Student");
-
+		Account user1 = new Account("tom", "1234", "Student");
 
 		ArrayList<Account> accountList = new ArrayList<>();
-		accountList.add(user1); 
+		accountList.add(user1);
 
 		int option = -1;
-		
-//		while (option != 3) {
-//
-//			mainMenu();
-//			option = Helper.readInt("Enter an option> ");
-//
-//			if (option == 1) {
-//				Account loginAcct = getLoginAccount(accountList);
-//				if (loginAcct != null) {
-////					choiceOption(loginAcct); 
-//				}
-//			}
-//			
-//			else if (option == 2) {
-//				addAccount();
-//			} 
-//			
-//			else if (option == 3) {
-//				System.out.println("Thank you for using Lunch Box Online Ordering services!");
-//			}
-//			
-//			else {
-//				System.out.println("Invalid option!");
-//			}
-//		}
 
-		while (option != 6) {
-			C206_CaseStudy.appChoice();
-			int userChoice = Helper.readInt("Enter an option> ");
+		while (option != 3) {
 
-			// Shirin
-			if (userChoice == 1) {
-//				String userOpt = Helper.readString("Do you have an existing account? (Y/N) > ");
-//				if (userOpt == "Y") {
-//
-//					C206_CaseStudy.loginAccount();
-//				} else if (userOpt == "N") {
-//
-//					addAccount();
-//				} else if (userOpt == "N"){
-//
-//					Account ac = addAccount();
-//					C206_CaseStudy.addAccount(accountList, ac);
-//				} else {
-//					System.out.println("Please enter valid input");
-//				}
-			}
+			mainMenu();
+			option = Helper.readInt("Enter an option> ");
 
-			
-
-			else if (userChoice == 2) {
-
-//				C206_CaseStudy.addMenu();
-//				C206_CaseStudy.doViewMenu();
-
-
-			}
-			// Jannice
-			else if (userChoice == 3) {
-
-				C206_CaseStudy.menuChoice();
-
-			}
-
-			
-			//Kai Le
-			else if(userChoice == 4) {
-				lunchbox();
-				int lunchBox = Helper.readInt("Enter option > ");
-				if (lunchBox  == 1) {
-					LunchBoxOrder();
-				}else if (lunchBox == 2) {
-					viewLunchBoxOrder(orderList);				
-					
-				}else if (lunchBox==3){
-					deleteLunchBoxOrder(orderList);
-					
-				}else
-				{
-					System.out.println("Invalid Option");
+			if (option == 1) {
+				Account loginAcct = getLoginAccount(accountList);
+				if (loginAcct != null) {
+					choiceOption(loginAcct);
 				}
-				
-		
-				
-			
 			}
-			// Jun Peng
-			else if (userChoice == 5) {
 
-
+			else if (option == 2) {
+				addAccount();
 			}
-			//Jun Peng
-			else if(userChoice == 5) {
-				
 
-
+			else if (option == 3) {
+				System.out.println("Thank you for using Lunch Box Online Ordering services!");
 			}
 
 			else {
-				System.out.println("Thank you for using the app!");
+				System.out.println("Invalid option!");
 			}
-
-		} // end of while
-
+		}
 	}
-	
+
 	// Shirin
 	private static void mainMenu() {
 		Helper.line(60, "-");
@@ -154,35 +65,73 @@ public class C206_CaseStudy {
 		Helper.line(60, "-");
 	}
 
-	// ========================================== MENU
-	// ===================================================================
 	private static void appChoice() {
-		Helper.line(60, "-");
+		Helper.line(80, "-");
 		System.out.println("App Choice");
-		Helper.line(60, "-");
-		System.out.println("1. Menu Bank"); // Glenys
-		System.out.println("2. Monthly Menu"); // Jannice
-		System.out.println("3. Lunch Box Order"); // Kai Le
-		System.out.println("4. Order Bill"); // Jun Peng
-		System.out.println("5. Quit\n");
+		Helper.line(80, "-");
+		System.out.println("1. User Account"); // Shirin
+		System.out.println("2. Menu Bank"); // Glenys
+		System.out.println("3. Monthly Menu"); // Jannice
+		System.out.println("4. Lunch Box Order"); // Kai Le
+		System.out.println("5. Order Bill"); // Jun Peng
+		System.out.println("6. Quit\n");
 	}
-	
-	private static void lunchbox() {
-		Helper.line(60, "-");
-		System.out.println("1. Add Lunch Box Order ");
-		System.out.println("2. View Lunch Box Order");
-		System.out.println("3. Delete Lunch Box Order");
+
+	private static void choiceOption(Account loginAcct) {
+		int opt = -1;
+
+		while (opt != 5) {
+
+			appChoice();
+			opt = Helper.readInt("Enter choice > ");
+
+			if (opt == 1) {
+				userOpt();
+
+			} else if (opt == 2) {
+				addFoodMenu();
+				doMenuBank();
+
+			} else if (opt == 3) {
+				menuChoice();
+				doViewMenu();
+
+			} else if (opt == 4) {
+				LunchBoxOrder();
+
+			} else if (opt == 5) {
+				// Jun Peng
+
+			} else {
+				System.out.println("Thank you for using Lunch Box Online Ordering App!");
+			}
+		}
+	}
+
+	// Shirin
+
+	private static void userOpt() {
+		Helper.line(80, "-");
+		System.out.println("User Account");
+		Helper.line(80, "-");
+		System.out.println("1. View Account");
+		System.out.println("2. Update Account");
+		System.out.println("3. Delete Account");
+
+		int option = Helper.readInt("Enter option > ");
+
+		if (option == 1) {
+			C206_CaseStudy.doViewUserAcc(accountList);
+		} else if (option == 2) {
+			// Not updated yet
+
+		} else if (option == 3) {
+			C206_CaseStudy.deleteAcc(accountList);
+		}
 	}
 
 // ================================================== OPTION 1 ===============================================================
 
-
-	public static void loginAccount() {
-		String loginUser = Helper.readString("Enter User Login > ");
-		String loginPw = Helper.readString("Enter User Password > ");
-
-	}
-	
 	// Shirin
 	private static Account getLoginAccount(ArrayList<Account> accountList) {
 
@@ -201,9 +150,7 @@ public class C206_CaseStudy {
 				System.out.println("Incorrect username or password");
 			}
 		}
-
 		return loginAcct;
-
 	}
 
 	// Shirin
@@ -213,6 +160,7 @@ public class C206_CaseStudy {
 		String role = Helper.readString("Enter a role (Parent/Student) > ");
 		Account ac = new Account(username, password, role);
 		return ac;
+
 	}
 
 	// Shirin
@@ -225,7 +173,7 @@ public class C206_CaseStudy {
 		Helper.line(80, "-");
 		System.out.println("MONTHLY MENU");
 		Helper.line(80, "-");
-		String output = String.format("%-20d %-20s %-20s\n", "USERNAME", "PASSWORD", "ROLE");
+		String output = String.format("%-20s %-20s %-20s\n", "USERNAME", "PASSWORD", "ROLE");
 		output += retrieveAccDetails(accountList);
 		System.out.println(output);
 	}
@@ -233,7 +181,7 @@ public class C206_CaseStudy {
 	public static String retrieveAccDetails(ArrayList<Account> accountList) {
 		String output = "";
 		for (Account ac : accountList) {
-			output += String.format("%-20d %-20s %-20s\n", ac.getUsername(), ac.getPassword(), ac.getRole());
+			output += String.format("%-20s %-20s %-20s\n", ac.getUsername(), ac.getPassword(), ac.getRole());
 		}
 		return output;
 	}
@@ -260,13 +208,19 @@ public class C206_CaseStudy {
 		}
 		return isDeleted;
 	}
+<<<<<<< HEAD
 	
 
 // ============================================= END OF OPTION 1 ===============================================================
 
 	
+=======
+
+// ============================================END OF OPTION 1=================================================================
+
+>>>>>>> branch 'master' of https://github.com/20007073-Lee-JiaYe/C206_CaseStudy.git
 // ===========================================  OPTION 2 ======================================================================
-	
+
 	// Glenys
 	public static void addFoodMenu() {
 		menuList.add(new Menu(foodName.get(0).getType(), foodName.get(0).getName(), drinksList.get(0).getDrinks(),
@@ -276,9 +230,8 @@ public class C206_CaseStudy {
 		menuList.add(new Menu(foodName.get(2).getType(), foodName.get(2).getName(), drinksList.get(2).getDrinks(),
 				fruitsList.get(2).getFruits()));
 
-
 	}
-	
+
 	public static void doMenuBank() {
 
 		String output = String.format("%-10s %-10s", "NAME", "TYPE");
@@ -299,42 +252,7 @@ public class C206_CaseStudy {
 		}
 		System.out.println(output);
 	}
-//==============================================END OF OPTION 2=================================================
 	
-// =============================================OPTION 3========================================================================
-	
-	private static void menuChoice() {
-		Helper.line(80, "-");
-		System.out.println("Menu");
-		Helper.line(80, "-");
-		System.out.println("1. Add Monthly Menu");
-		System.out.println("2. View Monthly Menu");
-		System.out.println("3. Edit Monthly Menu");
-		System.out.println("4. Delete Monthly Menu");
-		System.out.println("5. Quit");
-
-		int choice = Helper.readInt("Enter a choice> ");
-
-		if (choice == 1) {
-
-			ArrayList<LunchBoxMenu> m = inputMenu();
-			C206_CaseStudy.doAddMenu(lunchBoxList, m);
-
-		} else if (choice == 2) {
-
-			C206_CaseStudy.doViewMenu(lunchBoxList);
-
-		} else if (choice == 3) {
-			C206_CaseStudy.doUpdateMenu(lunchBoxList);
-		} else if (choice == 4) {
-//				int id = Helper.readInt("Enter menu id> ");
-			C206_CaseStudy.deleteMenu(lunchBoxList);
-		} else {
-			System.out.println("You have quit the menu option ");
-		}
-	}
-
-
 	public static void addMenu() {
 		String type = "";
 		String name = "";
@@ -356,6 +274,38 @@ public class C206_CaseStudy {
 		menuList.add(new Menu(type, name, drinks, fruits));
 
 	}
+//==============================================END OF OPTION 2=================================================
+
+// =============================================OPTION 3========================================================================
+
+	// Jannice
+	private static void menuChoice() {
+
+		Helper.line(80, "-");
+		System.out.println("Menu");
+		Helper.line(80, "-");
+		System.out.println("1. Add Monthly Menu");
+		System.out.println("2. View Monthly Menu");
+		System.out.println("3. Edit Monthly Menu");
+		System.out.println("4. Delete Monthly Menu");
+		System.out.println("5. Quit");
+
+		int choice = Helper.readInt("Enter a choice> ");
+
+		if (choice == 1) {
+			ArrayList<LunchBoxMenu> m = inputMenu();
+			C206_CaseStudy.doAddMenu(lunchBoxList, m);
+		} else if (choice == 2) {
+			C206_CaseStudy.doViewMenu(lunchBoxList);
+		} else if (choice == 3) {
+
+		} else if (choice == 4) {
+			C206_CaseStudy.deleteMenu(lunchBoxList);
+		} else {
+			System.out.println("You have quit the menu option ");
+		}
+	}
+
 	public static ArrayList<LunchBoxMenu> inputMenu() {
 		LunchBoxMenu m1 = new LunchBoxMenu(1, "1-Aug-2021", "Hamburger", "Nasi Lemak", "Fried Rice", "Apple Juice",
 				"Orange Juice", "Watermelon", "Papaya");
@@ -367,13 +317,13 @@ public class C206_CaseStudy {
 
 	}
 
-
 	private static void doViewMenu() {
 
 		for (Menu m : menuList) {
 			m.display();
 		}
 	}
+
 	public static void doAddMenu(ArrayList<LunchBoxMenu> lunchBoxList, ArrayList<LunchBoxMenu> m) {
 		if (!lunchBoxList.containsAll(m)) {
 			lunchBoxList.addAll(m);
@@ -381,9 +331,7 @@ public class C206_CaseStudy {
 		} else
 			System.out.println("Menu is updated as of last updated");
 
-
 	}
-
 
 	public static void doDeleteMenu(String menuName) {
 		for (Menu m : menuList) {
@@ -436,12 +384,11 @@ public class C206_CaseStudy {
 		return isDeleted;
 	}
 
-
 //==============================================END OF OPTION 3=================================================
-
-// OPTION 4
-// KAI LE
 	
+//==============================================OPTION 4========================================================
+
+// KAI LE
 	private static Order LunchBoxOrder() {
 		System.out.println("ADD LUNCH BOX ORDER");
 		int orderid = Helper.readInt("Enter order id :");
@@ -449,61 +396,50 @@ public class C206_CaseStudy {
 		String meal = Helper.readString("Enter meal : ");
 		String drink = Helper.readString("Enter drink: ");
 		String fruit = Helper.readString("Enter fruit: ");
-				
-			Order o = new Order(orderid, dateorder, meal, drink, fruit);
-			addLunchBoxOrder(orderList,o);
-				return o;
-			}
-			
+
+		Order o = new Order(orderid, dateorder, meal, drink, fruit);
+		addLunchBoxOrder(orderList, o);
+		return o;
+	}
+
 	public static void addLunchBoxOrder(ArrayList<Order> orderList, Order o) {
-		
+
 		orderList.add(o);
 		System.out.println("Order added.");
 	}
-	
-	
-		
-// OPTION 4
+
 // KAI LE
 	public static void viewLunchBoxOrder(ArrayList<Order> orderList) {
 		System.out.println("VIEW LUNCH BOX ORDER");
 		System.out.println(String.format("%-5s %-10s %-10s %-10s %s", "ID", "DATE", "MEAL", "DRINK", "FRUIT"));
 		for (Order odr : orderList) {
-		
-		System.out.println(String.format("%-10d %-10s %-10s %-10s %-10s", odr.getorderid(), odr.getdate(),odr.getmeal(),odr.getdrink(),odr.getfruit()));
-		}
-		
-	}
-	
 
+			System.out.println(String.format("%-10d %-10s %-10s %-10s %-10s", odr.getorderid(), odr.getdate(),
+					odr.getmeal(), odr.getdrink(), odr.getfruit()));
+		}
+
+	}
 
 	private static void doUpdateMenu(ArrayList<LunchBoxMenu> lunchBoxList) {
 		// TODO Auto-generated method stub
 		System.out.println("not yet implemented");
 	}
-	// ==============================================END OF OPTION 3================================================================
 
-
-
-// OPTION 4
 // KAI LE
 	public static void deleteLunchBoxOrder(ArrayList<Order> orderList) {
 		int orderids = Helper.readInt("Enter order id : ");
-		for (int i=0; i<orderList.size(); i++) {
+		for (int i = 0; i < orderList.size(); i++) {
 			if (orderids == orderList.get(i).getorderid()) {
 				orderList.remove(i);
 				System.out.println("Order deleted.");
-		}
-		
-	}
-}
-	
-	
+			}
 
-	
+		}
+	}
+
 // OPTION 4
 // KAI LE TO EDIT AGAIN
-	//private static void updateLunchBoxOrder(ArrayList<Order> orderList) {
+	// private static void updateLunchBoxOrder(ArrayList<Order> orderList) {
 //		//System.out.println("UPDATE LUNCH BOX ORDER");
 //		//String dateorder = Helper.readString("Enter the order date : ");
 //		//if (LocalDate.parse(dateorder).getDayOfYear() - LocalDate.now().getDayOfYear() > 0) {
