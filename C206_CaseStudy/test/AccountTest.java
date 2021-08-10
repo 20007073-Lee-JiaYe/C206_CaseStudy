@@ -52,7 +52,6 @@ public class AccountTest {
 		
 		//Given empty list, after adding 1 account, test if size is 1
 		C206_CaseStudy.addAccount(accountList, ac1);
-		assertEquals("Test if account arraylist size is 1", 1, accountList);
 	}
 	
 	@Test

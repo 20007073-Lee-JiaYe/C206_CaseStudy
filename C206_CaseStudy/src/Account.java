@@ -10,6 +10,7 @@ public class Account {
 	private String username;
 	private String password;
 	private String role;
+	private boolean isUpdated;
 	
 	public Account(String username, String password, String role) {
 		this.username = username;
@@ -39,5 +40,13 @@ public class Account {
 	
 	public boolean accDelete(String name) {
 		return true;
+	}
+	
+	public void setIsUpdated(boolean isUpdated) {
+		this.isUpdated = isUpdated;
+	}
+	
+	public boolean getIsUpdated() {
+		return isUpdated;
 	}
 }

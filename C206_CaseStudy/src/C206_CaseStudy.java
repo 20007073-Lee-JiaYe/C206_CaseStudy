@@ -180,8 +180,8 @@ public class C206_CaseStudy {
 
 	public static String retrieveAccDetails(ArrayList<Account> accountList) {
 		String output = "";
-		for (Account ac : accountList) {
-			output += String.format("%-20s %-20s %-20s\n", ac.getUsername(), ac.getPassword(), ac.getRole());
+		for (int i = 0; i < accountList.size(); i++) {
+			output += String.format("%-20s %-20s %-20s\n", accountList.get(i).getUsername(), accountList.get(i).getPassword(), accountList.get(i).getRole());
 		}
 		return output;
 	}
