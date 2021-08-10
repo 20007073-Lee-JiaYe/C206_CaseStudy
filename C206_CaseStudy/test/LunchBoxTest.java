@@ -1,9 +1,13 @@
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertSame;
 
 import java.util.ArrayList;
+
 
 
 public class LunchBoxTest {
@@ -18,13 +22,13 @@ public class LunchBoxTest {
 	public LunchBoxTest() {
 		super();
 	}
-	
+	@Before
 	public void setUp() throws Exception {
 		// prepare test data
 		order1 = new Order(123, "1-Aug-2021", "Burger", "Orange Juice", "Apple Slice");
 		order2 = new Order(124, "2-Aug-2021", "dumpling soup", "apple juice", "Honey Dew");
 	}
-	
+	@Test
 	// test if there is a valid lunch box array list add to
 	public void addLunchBoxTest() {
 		assertNotNull("Test if there is a valid Lunch Box to add to", orderList);
@@ -39,7 +43,7 @@ public class LunchBoxTest {
 		assertEquals("Test that the order ArrayList size is 2", 2, orderList.size());
 		assertSame("Test that the order is added", order2, orderList.get(1));
 	}
-	
+	@Test
 	public void viewLunchBoxTest() {
 	
 		assertNotNull("Test if there is arraylist for orders to add in to", orderList);
@@ -60,7 +64,7 @@ public class LunchBoxTest {
 		testOutput += String.format("%-30d %-30s %-30s %-30s %-30s\n", 124, "2-Aug-2021", "dumpling soup", "apple juice", "Honey Dew");
 		assertEquals("Check if the result  is the same", testOutput, orderList);
 	}
-		
+	@Test	
 	public void deleteLunchBoxTest() {
 		//Test if the order list is not empty
 		assertNotNull("Test if there is arraylist for user account to add in to", orderList);
@@ -83,4 +87,10 @@ public class LunchBoxTest {
 		C206_CaseStudy.deleteLunchBoxOrder(orderList);;
 		assertEquals("Test if the user account list size is 0", 0, orderList.size());
 	}
+
+
+@After
+public void tearDown() throws Exception {
+	orderList = null;
+}
 }
